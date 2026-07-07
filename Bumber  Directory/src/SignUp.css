@@ -1,0 +1,301 @@
+* {
+  margin: none;
+  padding: none;
+}
+
+.body {
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(54, 57, 80, 0.5) 50%,
+      rgba(54, 57, 57, 0.5) 46.09%
+    ),
+    url("src/Background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.mainForm {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  width: 100%;
+  margin: 30px auto;
+  height: fit-content;
+  border: 1px, solid;
+  display: block;
+
+  background: url(src/Background.png);
+  margin-top: 1.5rem;
+  margin-bottom: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 8px 30px rgb(40, 39, 39);
+  position: relative;
+  bottom: 10px;
+}
+.positionController {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: none;
+  margin-top: 10px;
+  height: 4.7rem;
+  margin-left: 20%;
+  position: sticky;
+}
+.headerTxt {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: absolute;
+  margin-top: 10px;
+  position: sticky;
+}
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainForm {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.inputDiv {
+  position: relative;
+  width: clamp(280px, 70vw, 700px);
+  max-width: 700px;
+  margin: 20px auto 0;
+}
+.formInput {
+  width: clamp(280px, 70vw, 700px);
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 0.5px solid gray;
+  padding-left: 20px;
+  padding-right: 50px;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: left;
+  font: inherit;
+  cursor: text;
+  margin-left: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(10, 13, 10, 0.2) 100%,
+    rgba(17, 26, 18, 0.2) 100%
+  );
+}
+.formInput:hover {
+  border-color: rgb(18, 18, 23);
+  border: 1px solid;
+}
+.styleImage {
+  margin-top: 20px;
+  margin-left: 100px;
+  color: #4b4edd;
+  border-radius: 10px;
+}
+.inputIcon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: rgb(86, 25, 207);
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: text;
+  margin-top: 10px;
+}
+
+.passwordIcon {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: rgb(86, 25, 207);
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+}
+.Error {
+  color: red;
+  font-size: clamp(12px, 2vw, 14px);
+  margin-top: 5px;
+  margin-left: 10px;
+  width: clamp(280px, 70vw, 700px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.signUpdiv {
+  margin-left: 40px;
+  margin-right: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signUp-btn {
+  width: 200px;
+  height: 60px;
+  border: 1px solid;
+  border-radius: 50px 0 50px 0px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(33, 33, 35);
+  background: linear-gradient(to right, #4b4edd, #12aedd);
+  transform: top, down;
+  z-index: 1;
+  box-shadow: 0 3px 5px rgb(232, 225, 225);
+  margin-left: 15%;
+  display: block;
+  position: relative;
+}
+.signUp-btn:hover {
+  background: linear-gradient(to right, #0f53c8, #1149ef);
+  color: white;
+}
+.endSignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  text-decoration: none;
+  color: rgb(49, 42, 42);
+}
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.Terms {
+  font-size: clamp(0.8rem, 1vh, 0.9rem);
+  text-align: center;
+  color: rgb(77, 87, 95);
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 90%;
+}
+a {
+  color: rgb(16, 49, 237);
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(11, 235, 86);
+}
+.Continue {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.horiContinue1,
+.horiContinue2 {
+  max-width: 190px;
+  min-width: 20px;
+  margin: 10px;
+  flex: 1;
+  color: black;
+}
+
+.continueIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 20px;
+  margin-left: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Icon:hover {
+  background-color: rgba(229, 240, 232);
+  border-radius: 20px;
+  transition: 1s;
+  transition-timing-function: linear;
+}
+
+/*
+for middle DeskTop
+*/
+
+@media (max-width: 1261px) {
+  .form {
+    background: url(Background1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+  .header {
+    margin-top: 170px;
+  }
+}
+@media (max-width: 470px) {
+  .positionController {
+    width: fit-content;
+    margin-right: 17px;
+  }
+
+  .Error {
+    font-size: 0.9rem;
+    margin-left: 30px;
+  }
+  .Terms {
+    font-size: 0.7rem;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}

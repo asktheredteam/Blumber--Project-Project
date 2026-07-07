@@ -1,0 +1,42 @@
+* {
+  padding: none;
+  margin: none;
+}
+.LuncherDiv {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  background: linear-gradient(180deg, #0a37cf 0%, #ffffff 100%);
+}
+
+.LuncherImage {
+  width: 100px;
+  height: 200px;
+  animation-duration: 3s;
+  animation-name: spin;
+}
+
+.paragraph {
+  position: relative;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 300px;
+  font-size: 65px;
+  line-height: 75px;
+  color: #1b1717;
+  animation-name: spin;
+  animation-duration: 2s;
+}
+
+@keyframes spin {
+  0% {
+    display: none;
+    margin-right: 460px;
+  }
+  100% {
+  }
+}
