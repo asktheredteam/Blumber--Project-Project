@@ -1,5 +1,6 @@
-import SignUp from "./SignUp";
-import SplashScreen from "./SplashScreen";
+import SignUp from "./pages/SignUp";
+import SplashScreen from "./pages/SplashScreen";
+import LoginPage from "./pages/LoginPage";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SplashScreen />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );

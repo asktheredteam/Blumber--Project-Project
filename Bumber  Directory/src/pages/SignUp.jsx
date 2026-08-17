@@ -1,7 +1,7 @@
 import EndSignUp from "./EndSignUp.jsx";
-import FormSU from "./FormSU.jsx";
-import HeaderSU from "./HeaderSU.jsx";
-import "./SignUp.css";
+import FormSU from "../components/FormSU.jsx";
+import HeaderSU from "../components/HeaderSU.jsx";
+import "../styles/SignUp.css";
 
 function SignUp() {
   return (

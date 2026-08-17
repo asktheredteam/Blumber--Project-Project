@@ -1,8 +1,8 @@
-import useInteractive from "./useInterative";
+import useInteractive from "../hooks/useInterative";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import { GrInstagram } from "react-icons/gr";
-import "./SignUp.css";
+import "../styles/SignUp.css";
 
 function EndSignUp() {
   const { continueWithStyle, horiStyle, continueText, IconDivStyle } =
@@ -15,7 +15,7 @@ function EndSignUp() {
           <p>
             Already have an account{" "}
             <span>
-              <a href="Login">Login</a>
+              <a href="/login">Login</a>
             </span>
           </p>
         </div>

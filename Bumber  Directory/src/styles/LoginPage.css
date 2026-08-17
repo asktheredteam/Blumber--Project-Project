@@ -1,0 +1,284 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #dcedf9; /* The light blue background from image_44e3a4.png */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main Container split */
+.login-container {
+  display: flex;
+  width: 100%;
+  max-width: 950px;
+  background-color: #dcedf9; 
+  padding: 40px;
+  align-items: center;
+}
+
+/* Left Illustration Column */
+.illustration-side {
+  flex: 1.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.hero-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 874 / 1374;
+}
+
+/* Right Form Column */
+.form-side {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/* Logo Styling */
+.brand-logo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.logo-b {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #1a5cb8; /* Deep blue logo color */
+  line-height: 0.8;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  color: #707070;
+  margin-left: 2px;
+  padding-bottom: 4px;
+}
+
+/* Heading */
+.welcome-heading {
+  font-size: 2rem;
+  color: #1c2d42;
+  font-family: 'Georgia', serif; /* Serif font used in image_44e3a4.png */
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Form Layout */
+.auth-form {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Inputs with Inner Borders and Icons */
+.input-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 45px 14px 20px;
+  font-size: 0.95rem;
+  background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white overlay */
+  border: 1px solid #7d9cb3;
+  border-radius: 25px; /* Fully rounded capsule style */
+  color: #4a5568;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #556c80;
+}
+
+.input-group input:focus {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #1a5cb8;
+}
+
+/* Input Icons positioning */
+.input-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Real Google Brand Icon */
+.social-icon.google {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%234285F4' d='M44.5 20.5H24v7.5h11c-1 4-4.5 6.5-8.9 6.5-5.4 0-9.7-4.4-9.7-9.7s4.4-9.7 9.7-9.7c2.4 0 4.6.9 6.2 2.3l5.8-5.8C35.4 6 29.9 3 24 3 12.6 3 3 12.6 3 24s9.6 21 21 21c11 0 20-8.1 20-21 0-1.4-.1-2.5-.5-3.5z'/%3E%3Cpath fill='%23FBBC05' d='M7.8 14.4l6.4 4.7C15 16.1 19.1 13 24 13c2.4 0 4.6.9 6.2 2.3l5.8-5.8C35.4 6 29.9 3 24 3 16.2 3 9.2 7.3 7.8 14.4z'/%3E%3Cpath fill='%23EA4335' d='M24 44c5.1 0 9.4-1.7 12.6-4.6l-6-4.9c-1.8 1.2-4.2 1.9-6.6 1.9-5.2 0-9.5-3.5-11.1-8.3H7.8v5.2C10.1 39.4 16.7 44 24 44z'/%3E%3Cpath fill='%2343A047' d='M40.7 19.9c-.3-1.4-1-2.6-2.1-3.6L32.8 21c-.8.8-1.8 1.2-2.8 1.4v6.1h7.9C39.9 24.3 40.5 22.2 40.7 19.9z'/%3E%3C/svg%3E");
+}
+
+/* Real Instagram Gradient/Colored Icon */
+.social-icon.instagram {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%' stop-color='%23feda75'/%3E%3Cstop offset='25%' stop-color='%23fa7e1e'/%3E%3Cstop offset='50%' stop-color='%23d62976'/%3E%3Cstop offset='75%' stop-color='%23513CBD'/%3E%3Cstop offset='100%' stop-color='%233f5efb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='120' fill='url(%23g)'/%3E%3Cpath d='M341 170c0-12-9.8-22-22-22h-38c-12 0-22 9.8-22 22v38c0 12 9.8 22 22 22h38c12 0 22-9.8 22-22v-38zm-72 19c0-26-21-47-47-47s-47 21-47 47 21 47 47 47 47-21 47-47zm95 42c-2-45-20-84-53-116s-71-51-116-53c-46-3-184-3-230 0-45 2-84 20-116 53S2 118 0 163c-3 46-3 184 0 230 2 45 20 84 53 116s71 51 116 53c46 3 184 3 230 0 45-2 84-20 116-53s51-71 53-116c3-46 3-184 0-230z' fill='white'/%3E%3C/svg%3E");
+}
+
+/* Real Facebook Brand Icon */
+.social-icon.facebook {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231877F2' d='M13.5 22v-8.5h2.9l.4-3.3h-3.3V4.1c0-.95.3-1.6 1.6-1.6h1.7V.1C16.4.1 15.2 0 13.9 0c-2.5 0-4.2 1.5-4.2 4.3v2.4H7v3.3h2.7V22h3.8Z'/%3E%3C/svg%3E");
+}
+
+/* Mail Icon inside the Email Input */
+.mail-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+}
+
+/* Key Icon inside the Password Input */
+.lock-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4'/%3E%3C/svg%3E");
+}
+
+/* Forgot Password */
+.forgot-password-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
+.forgot-password {
+  font-size: 0.8rem;
+  color: #2b52db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Leaf-Shaped Gradient Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2b3a4a;
+  /* Distinct organic shape asymmetric border radius matching the graphic */
+  border-radius: 25px 0px 25px 0px; 
+  border: none;
+  background: linear-gradient(135deg, #a4c3b2 0%, #768da6 50%, #63769c 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  margin-bottom: 15px;
+}
+
+.submit-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Bottom Links */
+.account-toggle {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.signup-link {
+  color: #e04b77; /* Accent pink/red from the image */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Or continue with Line dividers */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #556c80;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #9cb1c4;
+}
+
+.divider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+/* Social Row */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+/* Responsive break for small screens */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .illustration-side {
+    margin-bottom: 30px;
+    padding-right: 0;
+  }
+  .form-side {
+    padding-left: 0;
+    width: 100%;
+  }
+  .brand-logo {
+    justify-content: center;
+  }
+  .auth-form {
+    margin: 0 auto;
+  }
+}

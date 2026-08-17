@@ -1,6 +1,6 @@
-import useInteractive from "./useInterative";
+import useInteractive from "../hooks/useInterative";
 import { useRef } from "react";
-import "./SignUp.css";
+import "../styles/SignUp.css";
 import { FaUser } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { MdPhone } from "react-icons/md";
