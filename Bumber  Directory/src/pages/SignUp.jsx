@@ -6,7 +6,7 @@ import "../styles/SignUp.css";
 function SignUp() {
   return (
     <>
-      <div className="body">
+      <div className="SignUpMainDiv">
         <div className="form">
           <div className="positionController">
             {" "}

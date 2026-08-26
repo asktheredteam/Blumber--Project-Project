@@ -3,7 +3,7 @@
   padding: none;
 }
 
-.body {
+.SignUpMainDiv {
   margin: 0;
   padding: 20px;
   min-height: 100vh;
@@ -17,14 +17,14 @@
       rgba(54, 57, 80, 0.5) 50%,
       rgba(54, 57, 57, 0.5) 46.09%
     ),
-    url("src/Background.png");
+    url("..//assets/Background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
 .mainForm {
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
   border: 1px, solid;
   display: block;
 
-  background: url(src/Background.png);
+  background: url(../assets/Background.png);
   margin-top: 1.5rem;
   margin-bottom: 300px;
   background-position: center;
@@ -92,14 +92,14 @@
   position: relative;
   width: clamp(280px, 70vw, 700px);
   max-width: 700px;
-  margin: 12px auto 0;
+  margin: 35px auto 0;
 }
 .formInput {
   width: clamp(280px, 70vw, 700px);
   height: 48px;
   box-sizing: border-box;
   border-radius: 999px;
-  border: 1px solid rgba(128,128,128,0.25);
+  border: 1px solid rgba(128, 128, 128, 0.25);
   padding-left: 20px;
   padding-right: 56px;
   font-size: 16px;
@@ -127,7 +127,7 @@
 }
 .inputIcon {
   position: absolute;
-  top: 50%;
+  top: 45%;
   right: 18px;
   transform: translateY(-50%);
   font-size: 22px;
@@ -144,7 +144,7 @@
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   font-size: 22px;
   color: rgb(86, 25, 207);
@@ -157,7 +157,7 @@
   color: red;
   font-size: clamp(12px, 2vw, 14px);
   margin-top: 5px;
-  margin-left: 10px;
+  margin-left: 40px;
   width: clamp(280px, 70vw, 700px);
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -267,8 +267,8 @@ a:hover {
   cursor: pointer;
 }
 .avatar-preview {
-  width: 96px;
-  height: 96px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -278,10 +278,15 @@ a:hover {
   font-weight: 700;
   font-size: 1.4rem;
   box-shadow: 0 6px 18px rgba(18, 45, 80, 0.25);
-  border: 3px solid rgba(255,255,255,0.12);
+  border: 3px solid rgba(255, 255, 255, 0.12);
 }
-.avatar-input { display: none; }
-.avatar-preview:hover { transform: translateY(-3px); transition: transform 0.15s ease; }
+.avatar-input {
+  display: none;
+}
+.avatar-preview:hover {
+  transform: translateY(-3px);
+  transition: transform 0.15s ease;
+}
 
 .Icon:hover {
   background-color: rgba(229, 240, 232);
@@ -296,7 +301,7 @@ for middle DeskTop
 
 @media (max-width: 1261px) {
   .form {
-    background: url(Background1.png);
+    background: url(../assets/Backcround2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -317,7 +322,6 @@ for middle DeskTop
 
   .Error {
     font-size: 0.9rem;
-    margin-left: 30px;
   }
   .Terms {
     font-size: 0.7rem;

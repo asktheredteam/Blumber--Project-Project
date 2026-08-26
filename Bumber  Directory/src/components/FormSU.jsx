@@ -13,11 +13,10 @@ function FormSU() {
     error,
     handleChange,
     formSubmit,
-    handleProfilePhoto,
-    // Fetching countries, roles, and id_types from the useInteractive hook
-    countries,
+
+    // Fetching roles from the useInteractive hook
     roles,
-    id_types,
+
     // Destructuring the values for password visibility from the useInteractive hook
     showPassword,
     setShowPassword,
@@ -76,25 +75,6 @@ function FormSU() {
           {error.email && <p className="Error">{error.email}</p>}
         </div>
 
-        {/* Country */}
-        <div className="inputDiv">
-          <select
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            className="formInput"
-          >
-            <option value="">Select Country</option>
-
-            {countries.map((country) => (
-              <option key={country.value} value={country.name}>
-                {country.name}
-              </option>
-            ))}
-          </select>
-          {error.country && <p className="Error">{error.country}</p>}
-        </div>
-
         {/* Phone */}
         <div>
           <div className="inputDiv">
@@ -138,37 +118,6 @@ function FormSU() {
             </select>
           </div>
           {error.role && <p className="Error">{error.role}</p>}
-        </div>
-        {/* ID Type */}
-        <div>
-          {" "}
-          <div className="inputDiv">
-            <select
-              name="id_type"
-              value={formData.id_type}
-              onChange={handleChange}
-              className="formInput"
-            >
-              <option value="">Select Identity Card</option>
-
-              {id_types.map((id) => (
-                <option key={id} value={id}>
-                  {id}
-                </option>
-              ))}
-            </select>
-
-            {formData.id_type && (
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleProfilePhoto}
-                className="styleImage"
-              />
-            )}
-
-            {error.file && <p className="Error">{error.file}</p>}
-          </div>
         </div>
 
         {/* Password */}

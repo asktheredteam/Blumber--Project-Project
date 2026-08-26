@@ -1,0 +1,333 @@
+:root {
+  --bumber-blue: #2563eb;
+  --navbar-bg: transparent;
+  --navbar-text: #1b1717;
+  --navbar-text-dim: rgba(29, 23, 23, 0.75);
+  --manu-text-color: rgb(255, 255, 255);
+  --link-hover-color: var(--bumber-blue);
+  --nav-link-hover-color: white;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--navbar-bg);
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 20px 20px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(7, 10, 190, 0.08);
+}
+
+/* LOGO */
+.logo-text {
+  color: var(--navbar-text);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo-dot {
+  color: var(--bumber-blue);
+}
+
+/* DESKTOP LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2vw, 2.25rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links > li > a {
+  color: var(--navbar-text-dim);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 180ms ease;
+}
+
+.nav-links > li > a:hover,
+.nav-links > li > a:focus-visible {
+  color: var(--nav-link-hover-color);
+}
+
+/* FEATURES DROPDOWN TRIGGER */
+.dropdown {
+  position: relative;
+}
+
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  color: var(--navbar-text-dim);
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.4rem 0;
+  transition: color 180ms ease;
+}
+
+.feature-link:hover,
+.feature-link:focus-visible {
+  color: var(--nav-link-hover-color);
+}
+
+.feature-link svg {
+  font-size: 0.9rem;
+  transition: transform 200ms ease;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+  position: absolute;
+  top: calc(100% + 0.9rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 200px;
+  max-width: 90vw;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms;
+}
+
+.dropdown_menu.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown_menu li a {
+  display: block;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  color: var(--manu-text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+.dropdown_menu li a:hover,
+.dropdown_menu li a:focus-visible {
+  background: rgba(0, 30, 255, 0.15);
+  color: #f6f6f6;
+}
+
+/* DESKTOP ACTIONS */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-actions a[style*="border: 1.5px solid"]:hover,
+.navbar-actions a:first-of-type:hover {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.navbar-actions a:last-of-type:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.22) !important;
+}
+
+/*The main LogIn Button  and SignUp*/
+.LogIn {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transition: all 200ms ease;
+}
+
+.SignUp {
+  background: #f6f3f3;
+  border: none;
+  padding: 0.55rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
+  transition: all 200ms ease;
+}
+
+/* HAMBURGER BUTTON */
+.signup-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--navbar-text);
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 0;
+}
+
+.signup-btn:focus-visible,
+.feature-link:focus-visible,
+.mobile-feature-btn:focus-visible,
+.nav-links a:focus-visible {
+  outline: 2px solid var(--bumber-blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* MOBILE MENU PANEL */
+.mobile-menu {
+  display: none;
+}
+
+/*  BREAKPOINT  */
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-actions a {
+    display: none;
+  }
+
+  .signup-btn {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(85vw, 340px);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 5.5rem 1.5rem 2rem;
+    background: rgba(137, 130, 130, 0.7);
+    backdrop-filter: blur(25px);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.5);
+    transition: right 250ms ease;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.active {
+    right: 0;
+  }
+
+  .mobile-menu a {
+    color: var(--manu-text-color);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 0.75rem 0.25rem;
+    border-radius: 8px;
+    transition:
+      background 150ms ease,
+      color 150ms ease;
+  }
+
+  .mobile-menu a:hover {
+    background: rgba(37, 99, 235, 0.12);
+    color: #ffffff;
+  }
+
+  .mobile-feature-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--manu-text-color);
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-family: inherit;
+    padding: 0.75rem 0.25rem;
+    cursor: pointer;
+  }
+
+  .mobile-feature-list {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.75rem;
+    transition: max-height 220ms ease;
+  }
+
+  .mobile-feature-list.open {
+    max-height: 320px;
+  }
+
+  .mobile-feature-list a {
+    font-size: 0.95rem;
+    color: var(--manu-text-color);
+    padding: 0.55rem 0.25rem;
+  }
+
+  .mobile-menu hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0.75rem 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
+  }
+
+  .mobile-menu {
+    width: 100vw;
+  }
+}

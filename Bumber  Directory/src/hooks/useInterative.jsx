@@ -11,18 +11,6 @@ export default function useInteractive() {
     password: "",
     confirmPassword: "",
   });
-  const countries = [
-    { name: "Ghana", value: "GH", code: "+233(0)" },
-    { name: "Nigeria", value: "NG", code: "+234" },
-    { name: "United States", value: "US", code: "+1" },
-    { name: "Canada", value: "CAN", code: "+1" },
-    { name: "United Kingdom", value: "UK", code: "+44" },
-    { name: "Germany", value: "GER", code: "+49" },
-    { name: "France", value: "FRA", code: "+33" },
-    { name: "South Africa", value: "SA", code: "+27" },
-    { name: "Kenya", value: "KE", code: "+254" },
-    { name: "India", value: "IN", code: "+91" },
-  ];
 
   const [error, setError] = useState({});
   const [cardImage, setCardImage] = useState(null);
@@ -40,20 +28,6 @@ export default function useInteractive() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Handle country selection
-    if (name === "country") {
-      const selectedCountry = countries.find(
-        (country) => country.name === value,
-      );
-
-      setFormData((prev) => ({
-        ...prev,
-        country: selectedCountry ? selectedCountry.value : "",
-        phone_number: selectedCountry ? selectedCountry.code : "",
-      }));
-
-      return;
-    }
     let newValue = value;
 
     // Capitalize first letter of every word in the name
@@ -73,15 +47,7 @@ export default function useInteractive() {
   };
 
   //Validating input condition
-  const validatePhone = () => {
-    const selectedCountry = countries.find(
-      (country) => country.value === formData.country,
-    );
 
-    if (!selectedCountry) return false;
-
-    return formData.phone_number.startsWith(selectedCountry.code);
-  };
   const validate = () => {
     let newErrors = {};
 
@@ -97,11 +63,6 @@ export default function useInteractive() {
       setError((newErrors.email = "Enter a valid email address"));
     }
 
-    // Country
-    if (formData.country === "") {
-      setError((newErrors.country = "select a country"));
-    }
-
     // Phone
     if (!formData.phone_number) {
       setError((newErrors.phone_number = "Phone number is required"));
@@ -114,11 +75,6 @@ export default function useInteractive() {
     // User Type
     if (formData.role === "") {
       setError((newErrors.role = "Please select a user type"));
-    }
-
-    // Image
-    if (!cardImage) {
-      setError((newErrors.file = "Please upload your ID image"));
     }
 
     // Password
@@ -154,12 +110,10 @@ export default function useInteractive() {
     payload.append("full_name", formData.full_name);
     payload.append("email", formData.email);
     payload.append("phone_number", formData.phone_number);
-    payload.append("country", formData.country);
+
     payload.append("id_type", formData.id_type);
     payload.append("role", formData.role);
     payload.append("password", formData.password);
-
-    payload.append("citizenship_card", cardImage);
 
     // optional
     payload.append("profile_photo", cardImage);
@@ -223,9 +177,7 @@ export default function useInteractive() {
     formSubmit,
     handleProfilePhoto,
 
-    countries,
     roles,
-    id_types,
 
     showPassword,
     setShowPassword,
