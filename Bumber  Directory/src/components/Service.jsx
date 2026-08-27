@@ -112,7 +112,7 @@ function Service() {
           Everything you need, in one <span>Smart App</span>
         </h1>
         <div className="subtitle">
-          <p>
+          <p className="p">
             Bumber brings together trusted services to make your daily life
             easier, safer, and more convenient.
           </p>

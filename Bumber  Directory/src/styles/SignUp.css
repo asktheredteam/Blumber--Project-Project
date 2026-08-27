@@ -301,13 +301,13 @@ for middle DeskTop
 
 @media (max-width: 1261px) {
   .form {
-    background: url(../assets/Backcround2.png);
+    background: url(../assets/Background2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
-    justify-items: center;
+
     align-items: center;
   }
   .header {
