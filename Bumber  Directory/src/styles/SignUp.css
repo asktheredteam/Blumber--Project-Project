@@ -92,18 +92,18 @@
   position: relative;
   width: clamp(280px, 70vw, 700px);
   max-width: 700px;
-  margin: 12px auto 0;
+  margin: 20px auto 0;
 }
 .formInput {
   width: clamp(280px, 70vw, 700px);
-  height: 48px;
+  height: 40px;
   box-sizing: border-box;
-  border-radius: 999px;
-  border: 1px solid rgba(128,128,128,0.25);
+  border-radius: 50px;
+  border: 0.5px solid gray;
   padding-left: 20px;
-  padding-right: 56px;
+  padding-right: 50px;
   font-size: 16px;
-  margin-top: 0;
+  margin-top: 20px;
   text-align: left;
   font: inherit;
   cursor: text;
@@ -128,7 +128,7 @@
 .inputIcon {
   position: absolute;
   top: 50%;
-  right: 18px;
+  right: 20px;
   transform: translateY(-50%);
   font-size: 22px;
   color: rgb(86, 25, 207);
@@ -174,10 +174,10 @@
 }
 
 .signUp-btn {
-  width: 220px;
-  height: 56px;
-  border: 0;
-  border-radius: 999px;
+  width: 200px;
+  height: 60px;
+  border: 1px solid;
+  border-radius: 50px 0 50px 0px;
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
@@ -256,32 +256,6 @@ a:hover {
   cursor: pointer;
   position: relative;
 }
-
-/* Avatar / profile photo upload UI */
-.profile-photo-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-.avatar-upload .avatar-label {
-  cursor: pointer;
-}
-.avatar-preview {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #4b4edd 0%, #12aedd 100%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.4rem;
-  box-shadow: 0 6px 18px rgba(18, 45, 80, 0.25);
-  border: 3px solid rgba(255,255,255,0.12);
-}
-.avatar-input { display: none; }
-.avatar-preview:hover { transform: translateY(-3px); transition: transform 0.15s ease; }
 
 .Icon:hover {
   background-color: rgba(229, 240, 232);
