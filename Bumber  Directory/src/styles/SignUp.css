@@ -3,7 +3,7 @@
   padding: none;
 }
 
-.SignUpMainDiv {
+.body {
   margin: 0;
   padding: 20px;
   min-height: 100vh;
@@ -17,14 +17,14 @@
       rgba(54, 57, 80, 0.5) 50%,
       rgba(54, 57, 57, 0.5) 46.09%
     ),
-    url("..//assets/Background.png");
+    url("src/Background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
 .mainForm {
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
   border: 1px, solid;
   display: block;
 
-  background: url(../assets/Background.png);
+  background: url(src/Background.png);
   margin-top: 1.5rem;
   margin-bottom: 300px;
   background-position: center;
@@ -92,18 +92,18 @@
   position: relative;
   width: clamp(280px, 70vw, 700px);
   max-width: 700px;
-  margin: 35px auto 0;
+  margin: 20px auto 0;
 }
 .formInput {
   width: clamp(280px, 70vw, 700px);
-  height: 48px;
+  height: 40px;
   box-sizing: border-box;
-  border-radius: 999px;
-  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 50px;
+  border: 0.5px solid gray;
   padding-left: 20px;
-  padding-right: 56px;
+  padding-right: 50px;
   font-size: 16px;
-  margin-top: 0;
+  margin-top: 20px;
   text-align: left;
   font: inherit;
   cursor: text;
@@ -127,8 +127,8 @@
 }
 .inputIcon {
   position: absolute;
-  top: 45%;
-  right: 18px;
+  top: 50%;
+  right: 20px;
   transform: translateY(-50%);
   font-size: 22px;
   color: rgb(86, 25, 207);
@@ -144,7 +144,7 @@
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
   font-size: 22px;
   color: rgb(86, 25, 207);
@@ -157,7 +157,7 @@
   color: red;
   font-size: clamp(12px, 2vw, 14px);
   margin-top: 5px;
-  margin-left: 40px;
+  margin-left: 10px;
   width: clamp(280px, 70vw, 700px);
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -174,10 +174,10 @@
 }
 
 .signUp-btn {
-  width: 220px;
-  height: 56px;
-  border: 0;
-  border-radius: 999px;
+  width: 200px;
+  height: 60px;
+  border: 1px solid;
+  border-radius: 50px 0 50px 0px;
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
@@ -257,37 +257,6 @@ a:hover {
   position: relative;
 }
 
-/* Avatar / profile photo upload UI */
-.profile-photo-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-.avatar-upload .avatar-label {
-  cursor: pointer;
-}
-.avatar-preview {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #4b4edd 0%, #12aedd 100%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.4rem;
-  box-shadow: 0 6px 18px rgba(18, 45, 80, 0.25);
-  border: 3px solid rgba(255, 255, 255, 0.12);
-}
-.avatar-input {
-  display: none;
-}
-.avatar-preview:hover {
-  transform: translateY(-3px);
-  transition: transform 0.15s ease;
-}
-
 .Icon:hover {
   background-color: rgba(229, 240, 232);
   border-radius: 20px;
@@ -301,13 +270,13 @@ for middle DeskTop
 
 @media (max-width: 1261px) {
   .form {
-    background: url(../assets/Background2.png);
+    background: url(Background1.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
-
+    justify-items: center;
     align-items: center;
   }
   .header {
@@ -322,6 +291,7 @@ for middle DeskTop
 
   .Error {
     font-size: 0.9rem;
+    margin-left: 30px;
   }
   .Terms {
     font-size: 0.7rem;
