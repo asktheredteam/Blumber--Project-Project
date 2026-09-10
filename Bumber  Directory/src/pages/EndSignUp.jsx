@@ -1,7 +1,7 @@
 import useInteractive from "../hooks/useInterative";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
-import { GrInstagram } from "react-icons/gr";
+
 import "../styles/SignUp.css";
 
 function EndSignUp() {
@@ -34,7 +34,6 @@ function EndSignUp() {
           <div className="continueIcon">
             <FcGoogle className="Icon" />
             <IoLogoFacebook color="blue" className="Icon" />
-            <GrInstagram className="Icon" />
           </div>
         </div>
       </div>

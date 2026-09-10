@@ -14,12 +14,35 @@
   padding: 0;
 }
 
-.signup-page {
+.mainForm {
+  width: 70%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  width: 90%;
+  margin: 30px auto;
+  height: fit-content;
+  border: 1px, solid;
+  display: block;
+  background: none;
+  margin-top: 2.5rem;
+  margin-bottom: 300px;
+  background: red;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 8px 30px rgb(40, 39, 39);
   position: relative;
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 27% 73%;
+  grid-template-columns: 100% 73%;
   gap: 0;
   align-items: center;
   background: #ffffff;
@@ -28,7 +51,7 @@
   max-width: none;
   border: 1px solid #b9b9b9;
   border-radius: 12px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .signup-page::before {
@@ -128,13 +151,19 @@
 .inputDiv {
   position: relative;
   width: 100%;
+
   max-width: 100%;
   margin: 0;
+}
+.inputDiv::placeholder {
+  color: #1c1717;
+  opacity: 1;
+  font-size: 1.5rem;
 }
 
 .formInput {
   width: 100%;
-  height: 20px;
+  height: 30px;
   box-sizing: border-box;
   border-radius: 999px;
   border: 1px solid rgba(140, 143, 214, 0.45);
@@ -148,7 +177,9 @@
   color: #2d3748;
   outline: none;
   appearance: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .formInput:hover {
@@ -168,10 +199,15 @@
 
 select.formInput {
   padding-right: 22px;
-  background-image: linear-gradient(45deg, transparent 50%, #7376d2 50%),
+  background-image:
+    linear-gradient(45deg, transparent 50%, #7376d2 50%),
     linear-gradient(135deg, #7376d2 50%, transparent 50%);
-  background-position: calc(100% - 10px) calc(50% - 2px), calc(100% - 6px) calc(50% - 2px);
-  background-size: 4px 4px, 4px 4px;
+  background-position:
+    calc(100% - 10px) calc(50% - 2px),
+    calc(100% - 6px) calc(50% - 2px);
+  background-size:
+    4px 4px,
+    4px 4px;
   background-repeat: no-repeat;
 }
 
@@ -352,79 +388,79 @@ a:hover {
   .positionController {
     width: min(350px, calc(100% - 32px));
   }
-}
 
-@media (max-width: 980px) {
-  .signup-page {
-    height: auto;
-    min-height: 100vh;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0;
+  @media (max-width: 980px) {
+    .signup-page {
+      height: auto;
+      min-height: 100vh;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 0;
+    }
+
+    .signup-illustration {
+      min-height: 320px;
+      width: 100%;
+      padding: 20px 14px;
+    }
+
+    .signup-card {
+      width: 100%;
+      max-width: none;
+    }
+
+    .positionController {
+      width: min(350px, calc(100% - 32px));
+      padding: 20px 0 24px;
+      align-items: center;
+    }
+
+    .header,
+    .Login,
+    .Terms,
+    .Continue,
+    .endSignUp {
+      align-items: center;
+      text-align: center;
+    }
   }
 
-  .signup-illustration {
-    min-height: 320px;
-    width: 100%;
-    padding: 20px 14px;
-  }
+  @media (max-width: 470px) {
+    .body {
+      padding: 0;
+    }
 
-  .signup-card {
-    width: 100%;
-    max-width: none;
-  }
+    .signup-page {
+      gap: 14px;
+      padding: 0;
+    }
 
-  .positionController {
-    width: min(350px, calc(100% - 32px));
-    padding: 20px 0 24px;
-    align-items: center;
-  }
+    .signup-card {
+      border-radius: 28px;
+    }
 
-  .header,
-  .Login,
-  .Terms,
-  .Continue,
-  .endSignUp {
-    align-items: center;
-    text-align: center;
-  }
-}
+    .positionController {
+      padding: 16px 14px 22px;
+    }
 
-@media (max-width: 470px) {
-  .body {
-    padding: 0;
-  }
+    .header {
+      margin-top: 0;
+    }
 
-  .signup-page {
-    gap: 14px;
-    padding: 0;
-  }
+    .headerTxt {
+      font-size: 1.5rem;
+    }
 
-  .signup-card {
-    border-radius: 28px;
-  }
+    .formInput {
+      margin-top: 14px;
+    }
 
-  .positionController {
-    padding: 16px 14px 22px;
-  }
+    .Error {
+      font-size: 0.8rem;
+    }
 
-  .header {
-    margin-top: 0;
-  }
-
-  .headerTxt {
-    font-size: 1.5rem;
-  }
-
-  .formInput {
-    margin-top: 14px;
-  }
-
-  .Error {
-    font-size: 0.8rem;
-  }
-
-  .Terms {
-    font-size: 0.72rem;
+    .Terms {
+      font-size: 0.72rem;
+    }
   }
 }
