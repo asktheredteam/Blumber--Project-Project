@@ -15,7 +15,7 @@ function EndSignUp() {
           <p>
             Already have an account{" "}
             <span>
-              <a href="/login">Login</a>
+              <Link href="/login">Login</Link>
             </span>
           </p>
         </div>

@@ -108,8 +108,9 @@ function Service() {
     <>
       <div className="service-container">
         <div className="headline">Our Services</div>
-        <h1>
-          Everything you need, in one <span>Smart App</span>
+        <h1 className="title">
+          Everything you need, in one{" "}
+          <span className="highlight">Smart App</span>
         </h1>
         <div className="subtitle">
           <p className="p">
