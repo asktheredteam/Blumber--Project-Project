@@ -28,7 +28,7 @@
   height: fit-content;
   border: 1px solid;
   display: flex;
-  background-image: url(../assets/Background.png);
+  background-image: red;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -142,7 +142,7 @@
 .inputDiv::placeholder {
   color: #1c1717;
   opacity: 1;
-  font-size: 1.5rem;
+  font-size: 3.5rem;
 }
 
 .formInput {
