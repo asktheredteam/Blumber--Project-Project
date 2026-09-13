@@ -18,7 +18,7 @@ function heroSection() {
 
         return prev + 1;
       });
-    }, 3500);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, []);
