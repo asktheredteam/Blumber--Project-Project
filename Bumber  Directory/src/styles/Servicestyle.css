@@ -76,6 +76,8 @@ body {
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
+  animation: serviceAnimate linear both;
+  animation-timeline: view();
 }
 
 .service-card {

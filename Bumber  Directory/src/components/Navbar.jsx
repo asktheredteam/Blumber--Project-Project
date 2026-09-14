@@ -89,7 +89,15 @@ function Navbar() {
         </li>
 
         <li>
-          <Link to="/Service">Services</Link>
+          <a
+            href="/services"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToService();
+            }}
+          >
+            Services
+          </a>
         </li>
 
         <li>
