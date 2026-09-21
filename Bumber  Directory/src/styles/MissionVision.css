@@ -1,0 +1,165 @@
+/* ===== MISSION VISION + TRUST SAFETY SECTION ===== */
+.mission-vision {
+  padding: 60px 6rem;
+  margin: 0;
+  background-color: #f5f9ff;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+
+/* Safety badge */
+.safety-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  width: fit-content;
+}
+
+.safety-icon {
+  font-size: 3rem;
+}
+
+.safety-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1c2d42;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ===== SECTION LABEL ===== */
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a5cb8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== LEFT SIDE - PURPOSE ===== */
+.purpose-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-vision-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mv-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26, 92, 184, 0.12);
+}
+
+.mv-card span {
+  font-size: 2rem;
+}
+
+.mv-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a5cb8;
+}
+
+.mv-card p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+/* ===== RIGHT SIDE - TRUST & SAFETY ===== */
+.trust-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trust-side h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1c2d42;
+  line-height: 1.25;
+}
+
+.trust-desc {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+/* Trust checklist */
+.trust-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trust-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: #1c2d42;
+  font-weight: 500;
+}
+
+.trust-list .check {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .mission-vision {
+    padding: 4rem 3rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-vision {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .trust-side h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-vision {
+    padding: 2.5rem 1rem;
+  }
+
+  .mv-card {
+    padding: 1.25rem;
+  }
+}

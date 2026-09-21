@@ -4,6 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import heroSlides from "./heroSlide";
 import "../styles/Hero.css";
 import { MdOutlineArrowForward } from "react-icons/md";
+
+
 function heroSection() {
   const featureBtnRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);

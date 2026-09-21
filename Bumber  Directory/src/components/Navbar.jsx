@@ -1,4 +1,4 @@
-import { Link, Route } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -10,6 +10,10 @@ function Navbar() {
   const [featureOpen, setFeatureOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileFeatureOpen, setMobileFeatureOpen] = useState(false);
+
+  // Detect current page for navbar style switching
+  const location = useLocation();
+  const isLightPage = location.pathname !== "/";
 
   const Features = [
     { name: "Rent Houses", link: "/rent" },
@@ -58,9 +62,9 @@ function Navbar() {
   }, []);
 
   const signUpBtnStyle = {
-    background: "#ffffff",
+    background: isLightPage ? "#1a5cb8" : "#ffffff",
     border: "none",
-    color: "#0a0a0a",
+    color: isLightPage ? "#ffffff" : "#0a0a0a",
     padding: "0.55rem 1.6rem",
     borderRadius: "999px",
     fontWeight: 700,
@@ -76,7 +80,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isLightPage ? "navbar-light" : ""}`}>
       <div className="logo">
         <Link to="/" className="logo-text">
           BUMBER<span className="logo-dot">.</span>
@@ -202,7 +206,7 @@ function Navbar() {
           to="/signup"
           className="SignUp"
           onClick={() => setMenuOpen(false)}
-          style={{ width: "100%", marginTop: "0.6rem", color: "black" }}
+          style={{ width: "100%", marginTop: "0.6rem", color: isLightPage ? "white" : "black" }}
         >
           Sign Up
         </Link>
