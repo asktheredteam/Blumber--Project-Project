@@ -3,10 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
-
 import "../styles/Navbar.css";
 
-function Navbar() {
+function Navbar({ onSignUpClick }) {
   const [featureOpen, setFeatureOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileFeatureOpen, setMobileFeatureOpen] = useState(false);
@@ -61,35 +60,17 @@ function Navbar() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  const signUpBtnStyle = {
-    background: isLightPage ? "#1a5cb8" : "#ffffff",
-    border: "none",
-    color: isLightPage ? "#ffffff" : "#0a0a0a",
-    padding: "0.55rem 1.6rem",
-    borderRadius: "999px",
-    fontWeight: 700,
-    fontSize: "0.95rem",
-    cursor: "pointer",
-    textDecoration: "none",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    whiteSpace: "nowrap",
-    boxShadow: "0 4px 14px rgba(255, 255, 255, 0.15)",
-    transition: "all 200ms ease",
-  };
-
   return (
     <nav className={`navbar ${isLightPage ? "navbar-light" : ""}`}>
-      <div className="logo">
-        <Link to="/" className="logo-text">
-          BUMBER<span className="logo-dot">.</span>
+      <div className="logoDiv">
+        <Link to="/" className="logo">
+          <img src="../src/assets/Logo.svg" alt="No logo Yet" />
         </Link>
       </div>
 
       <ul className="nav-links">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">HOME</Link>
         </li>
 
         <li>
@@ -100,12 +81,12 @@ function Navbar() {
               scrollToService();
             }}
           >
-            Services
+            SERVICES
           </a>
         </li>
 
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about">ABOUT US</Link>
         </li>
 
         <li className="dropdown" ref={featureRef}>
@@ -116,7 +97,7 @@ function Navbar() {
             aria-haspopup="true"
             onClick={() => setFeatureOpen((prev) => !prev)}
           >
-            Features
+            FEATURES
             {featureOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </button>
 
@@ -134,12 +115,11 @@ function Navbar() {
 
       <div className="navbar-actions">
         <Link to="/login" className="LogIn">
-          Log In
+          LOG IN
         </Link>
-
-        <Link to="/signup" style={signUpBtnStyle}>
-          Sign Up
-        </Link>
+        <button className="Sign-Up" onClick={onSignUpClick}>
+          SIGN UP
+        </button>
 
         <button
           className="signup-btn"
@@ -154,15 +134,15 @@ function Navbar() {
 
       <div ref={menuRef} className={`mobile-menu ${menuOpen ? "active" : ""}`}>
         <Link to="/" onClick={() => setMenuOpen(false)}>
-          Home
+          HOME
         </Link>
 
         <Link to="/services" onClick={() => setMenuOpen(false)}>
-          Services
+          SERVICE
         </Link>
 
         <Link to="/about" onClick={() => setMenuOpen(false)}>
-          About
+          ABOUT US
         </Link>
 
         <button
@@ -170,7 +150,7 @@ function Navbar() {
           aria-expanded={mobileFeatureOpen}
           onClick={() => setMobileFeatureOpen(!mobileFeatureOpen)}
         >
-          Features
+          FEATURES
           {mobileFeatureOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
         </button>
 
@@ -202,14 +182,21 @@ function Navbar() {
           Log In
         </Link>
 
-        <Link
-          to="/signup"
+        <button
+          type="button"
           className="SignUp"
-          onClick={() => setMenuOpen(false)}
-          style={{ width: "100%", marginTop: "0.6rem", color: isLightPage ? "white" : "black" }}
+          onClick={() => {
+            setMenuOpen(false);
+            onSignUpClick();
+          }}
+          style={{
+            width: "100%",
+            marginTop: "0.6rem",
+            color: isLightPage ? "white" : "black",
+          }}
         >
           Sign Up
-        </Link>
+        </button>
       </div>
     </nav>
   );

@@ -148,35 +148,6 @@ function Service() {
           ))}
         </div>
         {/*Trust and benefits*/}
-        <div className="benefits-container">
-          <div className="benefits-track">
-            <div className="benefits">
-              {benefits.map((benefit, index) => (
-                <div className="benefit" key={`${benefit.title}-${index}`}>
-                  <div className="benefit-icon">{benefit.icon}</div>
-
-                  <div>
-                    <h4>{benefit.title}</h4>
-                    <p>{benefit.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="benefits" aria-hidden="true">
-              {benefits.map((benefit, index) => (
-                <div className="benefit" key={`${benefit.title}-${index}`}>
-                  <div className="benefit-icon">{benefit.icon}</div>
-
-                  <div>
-                    <h4>{benefit.title}</h4>
-                    <p>{benefit.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );

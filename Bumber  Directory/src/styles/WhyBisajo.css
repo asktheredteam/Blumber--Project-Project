@@ -1,0 +1,350 @@
+/* WHY CHOOSE BISAJO*/
+
+.why-bisajo-section {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+  overflow: hidden;
+}
+
+/* 
+   TOP HEADING
+ */
+
+.why-bisajo-heading {
+  width: 100%;
+  text-align: center;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 4vw, 2rem) 0;
+}
+
+.why-bisajo-heading h2 {
+  margin: 0 0 15px;
+  color: #1b5024;
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  animation: headerAnimate both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+@keyframes headerAnimate {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+/* 
+   MAIN CONTAINER
+ */
+
+.why-bisajo-container {
+  width: 100%;
+  max-width: 1450px;
+  min-width: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.25fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(3rem, 6vw, 5.5rem) clamp(1.2rem, 5vw, 3.5rem);
+  background: #eef8f1;
+}
+
+/* 
+   LEFT CONTENT
+ */
+
+.why-bisajo-intro {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-bisajo-intro h3 {
+  margin: 0 0 clamp(1.2rem, 2vw, 1.8rem);
+  color: #1e5128;
+  font-size: clamp(2.5rem, 3vw, 3.9rem);
+  font-weight: 610;
+  line-height: 0.98;
+  letter-spacing: -1.5px;
+  overflow-wrap: break-word;
+}
+
+.why-bisajo-intro p {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 0 2rem;
+  color: #526b5a;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  line-height: 1.8;
+}
+
+/* 
+   BUTTON
+ */
+
+.why-bisajo-button {
+  width: min(100%, 350px);
+  min-height: clamp(58px, 5vw, 68px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #1e5128;
+  color: #ffffff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  animation: buttonAnimate both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+@keyframes buttonAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.why-bisajo-button:hover {
+  background: #173e1f;
+  transform: translateY(-3px);
+}
+
+.why-bisajo-arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.why-bisajo-button:hover .why-bisajo-arrow {
+  transform: translateX(5px);
+}
+
+/* 
+   RIGHT SIDE
+ */
+
+.why-bisajo-reasons {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 5rem);
+  row-gap: clamp(2.5rem, 6vw, 5rem);
+  align-content: center;
+}
+
+/* 
+   INDIVIDUAL REASON
+ */
+
+.why-bisajo-item {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+/* 
+   ICON
+ */
+
+.why-bisajo-icon {
+  flex: 0 0 clamp(48px, 5vw, 75px);
+  width: clamp(48px, 5vw, 75px);
+  height: clamp(48px, 5vw, 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e3f2e8;
+  color: #4b8467;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+/* 
+   TEXT
+ */
+
+.why-bisajo-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.why-bisajo-text h4 {
+  margin: 0 0 0.8rem;
+  color: #1e5128;
+  font-size: clamp(1.05rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.why-bisajo-text p {
+  width: 100%;
+  margin: 0;
+  color: #526b5a;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+/* 
+   TABLET LESS OR EQUAL TO 1050px
+ */
+
+@media (max-width: 1050px) {
+  .why-bisajo-container {
+    grid-template-columns: 1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+
+  .why-bisajo-intro {
+    width: 100%;
+    max-width: 750px;
+  }
+
+  .why-bisajo-intro p {
+    max-width: 700px;
+  }
+
+  .why-bisajo-reasons {
+    width: 100%;
+  }
+}
+
+/* 
+   SMALL TABLET
+   <= 750px
+ */
+
+@media (max-width: 750px) {
+  .why-bisajo-container {
+    padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.2rem, 5vw, 2rem);
+  }
+
+  .why-bisajo-reasons {
+    grid-template-columns: 1fr;
+
+    row-gap: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  .why-bisajo-intro h3 {
+    font-size: clamp(2.3rem, 8vw, 3.5rem);
+  }
+
+  .why-bisajo-button {
+    width: min(100%, 350px);
+  }
+}
+
+/*  MOBILE  <= 480px */
+
+@media (max-width: 480px) {
+  .why-bisajo-section {
+    padding-bottom: 3rem;
+  }
+
+  .why-bisajo-heading {
+    padding: 1.5rem 1rem 0;
+  }
+
+  .why-bisajo-heading h2 {
+    font-size: clamp(1.9rem, 8vw, 2.2rem);
+  }
+
+  .why-bisajo-container {
+    width: 100%;
+
+    padding: clamp(2rem, 7vw, 2.5rem) clamp(1rem, 5vw, 1.2rem);
+  }
+
+  .why-bisajo-intro h3 {
+    font-size: clamp(2rem, 9vw, 2.4rem);
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+  }
+
+  .why-bisajo-intro p {
+    font-size: clamp(0.95rem, 4vw, 1rem);
+
+    line-height: 1.7;
+  }
+
+  .why-bisajo-button {
+    width: 100%;
+
+    min-height: 60px;
+
+    font-size: 1rem;
+  }
+
+  .why-bisajo-item {
+    gap: clamp(0.75rem, 4vw, 1rem);
+  }
+
+  .why-bisajo-icon {
+    flex-basis: 55px;
+
+    width: 55px;
+    height: 55px;
+
+    font-size: 1.35rem;
+  }
+
+  .why-bisajo-text h4 {
+    font-size: 1.15rem;
+  }
+
+  .why-bisajo-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* 
+   VERY SMALL PHONES
+   <= 350px
+ */
+
+@media (max-width: 350px) {
+  .why-bisajo-container {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .why-bisajo-intro h3 {
+    font-size: clamp(1.8rem, 9vw, 2rem);
+  }
+
+  .why-bisajo-icon {
+    flex-basis: 48px;
+
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.2rem;
+  }
+
+  .why-bisajo-text h4 {
+    font-size: 1rem;
+  }
+
+  .why-bisajo-text p {
+    font-size: 0.9rem;
+  }
+}

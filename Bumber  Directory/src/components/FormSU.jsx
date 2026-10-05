@@ -1,180 +1,194 @@
 import useInteractive from "../hooks/useInterative";
 import { useRef } from "react";
 import "../styles/SignUp.css";
-import { FaUser } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
-import { MdPhone } from "react-icons/md";
+import {
+  LuUser,
+  LuMail,
+  LuPhone,
+  LuUsers,
+  LuLock,
+  LuEye,
+  LuEyeOff,
+  LuChevronDown,
+  LuArrowRight,
+} from "react-icons/lu";
 
 function FormSU() {
-  // Calling function in the use Effect Hook
   const {
-    // Destructuring the values from the useInteractive hook
     formData,
     error,
     handleChange,
     formSubmit,
-
-    // Fetching roles from the useInteractive hook
     roles,
-
-    // Destructuring the values for password visibility from the useInteractive hook
     showPassword,
     setShowPassword,
     showConfirmPassword,
     setShowConfirmPassword,
   } = useInteractive();
+
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const phoneRef = useRef(null);
+
   return (
-    <form onSubmit={formSubmit} className="mainForm">
-      {/* Name */}
-      <div>
-        <div>
-          <div className="inputDiv">
-            <input
-              type="text"
-              name="full_name"
-              ref={nameRef}
-              placeholder="Full Name"
-              value={formData.full_name}
-              onChange={handleChange}
-              className="formInput"
-            />
-            <FaUser
-              className="inputIcon"
-              onClick={() => {
-                nameRef.current.focus();
-              }}
-            />
-          </div>
+    <form onSubmit={formSubmit} className="signup-form">
+      {/* Full Name */}
+      <div className="field-group">
+        <div className="field">
+          <LuUser
+            className="field-icon"
+            onClick={() => nameRef.current.focus()}
+          />
 
-          {error.full_name && <p className="Error">{error.full_name}</p>}
+          <input
+            type="text"
+            name="full_name"
+            ref={nameRef}
+            placeholder="Full Name"
+            value={formData.full_name}
+            onChange={handleChange}
+            className="form-input"
+          />
         </div>
 
-        {/* Email */}
-        <div>
-          <div className="inputDiv">
-            <MdOutlineMail
-              className="inputIcon"
-              onClick={() => {
-                emailRef.current.focus();
-              }}
-            />
-            <input
-              type="email"
-              ref={emailRef}
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="formInput"
-            />
-          </div>
+        {error.full_name && <p className="field-error">{error.full_name}</p>}
+      </div>
 
-          {error.email && <p className="Error">{error.email}</p>}
+      {/* Email */}
+      <div className="field-group">
+        <div className="field">
+          <LuMail
+            className="field-icon"
+            onClick={() => emailRef.current.focus()}
+          />
+
+          <input
+            type="email"
+            name="email"
+            ref={emailRef}
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="form-input"
+          />
         </div>
 
-        {/* Phone */}
-        <div>
-          <div className="inputDiv">
-            <MdPhone
-              className="inputIcon"
-              onClick={() => {
-                phoneRef.current.focus();
-              }}
-            />
-            <input
-              type="tel"
-              ref={phoneRef}
-              name="phone_number"
-              placeholder="+233XXXXXXXXX"
-              value={formData.phone_number}
-              onChange={handleChange}
-              className="formInput"
-            />
-          </div>
+        {error.email && <p className="field-error">{error.email}</p>}
+      </div>
 
-          {error.phone_number && <p className="Error">{error.phone_number}</p>}
+      {/* Phone Number */}
+      <div className="field-group">
+        <div className="field">
+          <LuPhone
+            className="field-icon"
+            onClick={() => phoneRef.current.focus()}
+          />
+
+          <input
+            type="tel"
+            name="phone_number"
+            ref={phoneRef}
+            placeholder="Phone Number"
+            value={formData.phone_number}
+            onChange={handleChange}
+            className="form-input"
+          />
         </div>
 
-        {/* User Type */}
-        <div>
-          {" "}
-          <div className="inputDiv">
-            <select
-              name="role"
-              value={formData.role}
-              onChange={handleChange}
-              className="formInput"
-            >
-              <option value="">Select User Type</option>
+        {error.phone_number && (
+          <p className="field-error">{error.phone_number}</p>
+        )}
+      </div>
 
-              {roles.map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
-              ))}
-            </select>
-          </div>
-          {error.role && <p className="Error">{error.role}</p>}
+      {/* User Type */}
+      <div className="field-group">
+        <div className="field">
+          <LuUsers className="field-icon" />
+
+          <select
+            name="role"
+            value={formData.role}
+            onChange={handleChange}
+            className="form-input"
+          >
+            <option value="">Select User Type</option>
+
+            {roles.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+
+          <LuChevronDown className="field-chevron" />
         </div>
 
-        {/* Password */}
-        <div>
-          <div className="inputDiv">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
-              className="formInput"
-            />
+        {error.role && <p className="field-error">{error.role}</p>}
+      </div>
 
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="passwordIcon"
-            >
-              {showPassword ? "🙈" : "👀"}
-            </button>
-          </div>
+      {/* Password */}
+      <div className="field-group">
+        <div className="field">
+          <LuLock className="field-icon" />
 
-          {error.password && <p className="Error">{error.password}</p>}
-        </div>
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="form-input"
+          />
 
-        {/* Confirm Password */}
-        <div>
-          <div className="inputDiv">
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className="formInput"
-            />
-
-            <button
-              type="button"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="passwordIcon"
-            >
-              {showConfirmPassword ? "🙈" : "👀"}
-            </button>
-          </div>
-
-          {error.confirmPassword && (
-            <p className="Error">{error.confirmPassword}</p>
-          )}
-        </div>
-        <div className="signUpdiv">
-          <button type="submit" className="signUp-btn">
-            Sign Up
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="toggle-eye"
+            aria-label="Toggle password visibility"
+          >
+            {showPassword ? <LuEyeOff /> : <LuEye />}
           </button>
         </div>
+
+        {error.password && <p className="field-error">{error.password}</p>}
       </div>
+
+      {/* Confirm Password */}
+      <div className="field-group">
+        <div className="field">
+          <LuLock className="field-icon" />
+
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            className="form-input"
+          />
+
+          <button
+            type="button"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            className="toggle-eye"
+            aria-label="Toggle confirm password visibility"
+          >
+            {showConfirmPassword ? <LuEyeOff /> : <LuEye />}
+          </button>
+        </div>
+
+        {error.confirmPassword && (
+          <p className="field-error">{error.confirmPassword}</p>
+        )}
+
+        {error.server && <p className="field-error">{error.server}</p>}
+      </div>
+
+      {/* Submit */}
+      <button type="submit" className="btn-primary">
+        Sign Up
+        <LuArrowRight />
+      </button>
     </form>
   );
 }
