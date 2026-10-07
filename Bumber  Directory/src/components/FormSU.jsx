@@ -1,5 +1,6 @@
 import useInteractive from "../hooks/useInterative";
 import { useRef } from "react";
+import LoadingSpinner from "../pages/LoadingSpinner";
 import "../styles/SignUp.css";
 import {
   LuUser,
@@ -24,6 +25,7 @@ function FormSU() {
     setShowPassword,
     showConfirmPassword,
     setShowConfirmPassword,
+    isLoading,
   } = useInteractive();
 
   const nameRef = useRef(null);
@@ -185,8 +187,8 @@ function FormSU() {
       </div>
 
       {/* Submit */}
-      <button type="submit" className="btn-primary">
-        Sign Up
+      <button type="submit" disabled={isLoading} className="btn-primary">
+        {isLoading ? <LoadingSpinner /> : "Sign Up"}
         <LuArrowRight />
       </button>
     </form>

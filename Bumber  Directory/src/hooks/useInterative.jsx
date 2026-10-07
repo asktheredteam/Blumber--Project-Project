@@ -5,32 +5,27 @@ export default function useInteractive() {
     full_name: "",
     email: "",
     phone_number: "",
-    country: "",
-    id_type: "",
     role: "",
     password: "",
     confirmPassword: "",
   });
 
   const [error, setError] = useState({});
-  const [cardImage, setCardImage] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const roles = ["Landlord", "Tenant"];
+  const roles = ["landlord", "tenant"];
+  const [isLoading, setIsLoading] = useState(false);
 
-  const id_types = ["Citizen Card", "Voters Id", "Driver's Licence"];
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+  // Validation patterns
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const nameParts = formData.full_name.trim().split(/\s+/);
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
 
-  //Initializing of handleChange
-
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     let newValue = value;
 
-    // Capitalize first letter of every word in the name
+    // Capitalize every word in full name
     if (name === "full_name") {
       newValue = value.replace(/\b\w/g, (char) => char.toUpperCase());
     }
@@ -40,61 +35,63 @@ export default function useInteractive() {
       [name]: newValue,
     }));
 
+    // Remove the error for this field
     setError((prev) => ({
       ...prev,
       [name]: "",
     }));
   };
 
-  //Validating input condition
-
+  // Validate form
   const validate = () => {
-    let newErrors = {};
+    const newErrors = {};
 
-    // Name
+    // Full Name
     if (!formData.full_name.trim()) {
       newErrors.full_name = "Name is required";
     } else if (formData.full_name.trim().split(/\s+/).length < 2) {
-      setError((newErrors.full_name = "Enter your full name"));
+      newErrors.full_name = "Enter your full name";
     }
 
     // Email
-    if (!emailRegex.test(formData.email)) {
-      setError((newErrors.email = "Enter a valid email address"));
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
     }
 
-    // Phone
-    if (!formData.phone_number) {
-      setError((newErrors.phone_number = "Phone number is required"));
-    } else if (!validatePhone()) {
-      setError((newErrors.phone_number = "Phone code does not match country"));
+    // Phone Number
+    if (!formData.phone_number.trim()) {
+      newErrors.phone_number = "Phone number is required";
     } else if (formData.phone_number.length < 10) {
-      setError((newErrors.phone_number = "Phone number is too short"));
+      newErrors.phone_number = "Phone number is too short";
     }
 
     // User Type
-    if (formData.role === "") {
-      setError((newErrors.role = "Please select a user type"));
+    if (!formData.role) {
+      newErrors.role = "Select a user type";
     }
 
     // Password
-    if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
-    } else if (!/(?=.*[A-Za-z])/.test(formData.password)) {
-      newErrors.password = "Include at least one letter";
-    } else if (!/(?=.*\d)/.test(formData.password)) {
-      newErrors.password = "Include at least one number";
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (!passwordRegex.test(formData.password)) {
+      newErrors.password =
+        "Password must be at least 6 characters and contain a letter and number";
     }
 
-    // Confirm password
-    if (formData.password !== formData.confirmPassword) {
-      setError((newErrors.confirmPassword = "Passwords do not match"));
+    // Confirm Password
+    if (!formData.confirmPassword) {
+      newErrors.confirmPassword = "Please confirm your password";
+    } else if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
     }
 
     return newErrors;
   };
 
-  //Submiting form function
+  // Submit form
+
   const formSubmit = async (event) => {
     event.preventDefault();
 
@@ -105,18 +102,22 @@ export default function useInteractive() {
       return;
     }
 
+    // Clear any old server error
+    setError((prev) => ({
+      ...prev,
+      server: "",
+    }));
+
     const payload = new FormData();
 
     payload.append("full_name", formData.full_name);
     payload.append("email", formData.email);
     payload.append("phone_number", formData.phone_number);
-
-    payload.append("id_type", formData.id_type);
     payload.append("role", formData.role);
     payload.append("password", formData.password);
+    payload.append("confirm_password", formData.confirmPassword);
 
-    // optional
-    payload.append("profile_photo", cardImage);
+    setIsLoading(true);
 
     try {
       const response = await fetch(
@@ -129,59 +130,42 @@ export default function useInteractive() {
 
       const data = await response.json();
 
-      console.log(data);
+      console.log("Server response:", data);
+
+      if (!response.ok) {
+        setError({
+          server:
+            data.message ||
+            data.detail ||
+            data.error ||
+            "Registration failed. Please try again.",
+        });
+
+        return;
+      }
+
+      console.log("Registration successful!");
     } catch (error) {
-      console.log(error);
+      console.log("Request failed:", error);
+
+      setError({
+        server: "Unable to connect to the server. Please try again.",
+      });
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  //Handling Profile Photos
-  const handleProfilePhoto = (event) => {
-    const file = event.target.files[0];
-
-    if (!file) {
-      setCardImage(null);
-      return;
-    }
-
-    const allowedTypes = ["image/jpeg", "image/png"];
-    const maxSize = 5 * 1024 * 1024;
-
-    if (!allowedTypes.includes(file.type)) {
-      setError((prev) => ({
-        ...prev,
-        file: "Only PNG and JPEG images are allowed",
-      }));
-      return;
-    }
-
-    if (file.size > maxSize) {
-      setError((prev) => ({
-        ...prev,
-        file: "Image size must be less than 5MB",
-      }));
-      return;
-    }
-
-    setError((prev) => ({
-      ...prev,
-      file: "",
-    }));
-
-    setCardImage(file);
-  };
   return {
     formData,
     error,
     handleChange,
     formSubmit,
-    handleProfilePhoto,
-
     roles,
-
     showPassword,
     setShowPassword,
     showConfirmPassword,
     setShowConfirmPassword,
+    isLoading,
   };
 }
