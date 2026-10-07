@@ -1,0 +1,414 @@
+.servicesHero {
+  height: 90vh;
+  width: 100%;
+  background: url(../src/assets/ServicesHeroBG.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ContentDiv {
+  height: 100%;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.ContentDiv > p {
+  color: #a7f9af;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.ContentDiv div > h1 {
+  color: white;
+  font-size: 64px;
+  font-weight: 750;
+}
+.ContentDiv div > p {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.ContentDiv div button {
+  background-color: white;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.howItWorks {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(4rem, 7vw, 7rem) clamp(1rem, 5vw, 5rem);
+  background: #f8faf9;
+  text-align: center;
+  overflow: auto;
+}
+
+/* Small heading */
+.howItWorks > h3 {
+  margin: 0 0 clamp(0.8rem, 1.5vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4d9878;
+}
+
+/* Main heading */
+.howItWorks > h1 {
+  animation: cardAnimate infinte linear;
+  margin: 0 auto clamp(3rem, 5vw, 5rem);
+  max-width: 1000px;
+  min-width: 0;
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 700;
+  color: #183f32;
+}
+
+/* Cards container */
+.howItWorksContainer {
+  width: 100%;
+  max-width: 1500px;
+  min-width: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+}
+
+/* Individual card */
+.howItWorksCard {
+  position: sticky;
+  min-height: clamp(280px, 25vw, 380px);
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.2px solid green;
+  justify-content: center;
+  background: #f9faf9;
+  border-radius: clamp(20px, 2vw, 32px);
+  box-sizing: border-box;
+}
+@keyframes cardAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    translate: rotate(160deg);
+  }
+}
+/* Step circle */
+.stepNumber {
+  width: clamp(75px, 7vw, 95px);
+  aspect-ratio: 1;
+  margin-bottom: clamp(1.8rem, 3vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e0f0df;
+  color: #34745d;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+}
+
+/* Card title */
+.howItWorksCard h4 {
+  margin: 0 0 clamp(1rem, 1.5vw, 1.4rem);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.2;
+  color: #183f32;
+}
+
+/* Card paragraph */
+.howItWorksCard p {
+  max-width: 320px;
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: 1.6;
+  color: #65756e;
+}
+
+@media (max-width: 768px) {
+  .howItWorksContainer {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+/*Style for the Next services section*/
+
+/* 
+   DISCOVER SECTION
+    */
+.discoverSection {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: fit-content;
+  padding: clamp(4rem, 7vw, 10rem) clamp(1.5rem, 6vw, 7rem);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  overflow: visible;
+  background:
+    linear-gradient(90deg, rgba(75, 132, 103, 0.5) 30%, rgba(0, 0, 0, 0.1) 70%),
+    url(../src/assets/pn.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+/* 
+   LEFT CONTENT
+  */
+.discoverContent {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 720px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Small heading */
+.discoverContent h3 {
+  margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #b2dca5;
+}
+
+/* Main heading */
+.discoverContent h2 {
+  max-width: 800px;
+  min-width: 0;
+  margin: 0 0 clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+/* Paragraph */
+.discoverContent p {
+  max-width: 650px;
+  min-width: 0;
+  margin: 0 0 clamp(2rem, 3vw, 3.5rem);
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* BUTTON */
+.discoverButton {
+  min-width: clamp(200px, 15vw, 250px);
+  padding: clamp(0.9rem, 1.2vw, 1.2rem) clamp(1.2rem, 2vw, 1.8rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #a9d99e;
+  color: #163f32;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.discoverButton:hover {
+  transform: translateY(-4px);
+  background: #bde6b2;
+}
+
+.discoverButton .arrow {
+  font-size: 1.7rem;
+  transition: transform 0.3s ease;
+}
+
+.discoverButton:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* 
+   TABLET
+    */
+@media (max-width: 900px) {
+  .discoverSection {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 70vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .discoverContent {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .discoverVisual {
+    width: 100%;
+    max-width: 750px;
+    height: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* 
+   MOBILE
+    */
+
+@media (max-width: 600px) {
+  .discoverSection {
+    height: 70%;
+    padding: 4rem 1rem 3rem;
+  }
+
+  .discoverContent h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .discoverContent p {
+    font-size: 1rem;
+  }
+
+  .discoverButton {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* 
+   VERY SMALL PHONES
+ */
+
+@media (max-width: 400px) {
+  .discoverSection {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .discoverVisual {
+    height: fit-content;
+  }
+}
+
+/*
+   If the user has requested reduced motion,
+   stop the floating animations.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  .restaurantCard,
+  .shopCard,
+  .phoneWrapper,
+  .locationPin {
+    animation: none;
+  }
+
+  .discoverButton,
+  .discoverButton .arrow {
+    transition: none;
+  }
+}
+
+/*The bussiness Section part*/
+.bussinessSection {
+  width: 100%;
+  height: 80vh;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  column-gap: 50px;
+  align-items: center;
+}
+.firstbox {
+  background: rgba(227, 240, 229, 0.4);
+  width: 100%;
+  height: 50vh;
+}
+.firstbox .header {
+  color: green;
+  cursor: text;
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 700;
+}
+
+.firstbox > h4 {
+  color: black;
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 700;
+}
+.firstbox > p {
+  font-size: clamp(15px, 2.5vw, 28px);
+}
+
+.mainBox {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(15px, 2vw, 40px);
+  justify-content: center;
+}
+.mainBox > div {
+  position: relative;
+  background: white;
+  width: 190px;
+  height: 40px;
+  padding-top: 6px;
+  box-shadow: 10px 10px 10px rgba(129, 128, 128, 0.5);
+}
+
+.secondBox {
+  position: relative;
+  background-color: #34745d;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 35vh;
+}
+.secondBox > h3 {
+  font-size: 45px;
+  font-weight: 500;
+}
+.secondBox > p {
+  font-size: 15px;
+}
+.secondBox > button {
+  width: 180px;
+  height: 40px;
+  background: white;
+  border: 0px;
+  border-radius: 10px;
+}
+.secondBox > button:hover {
+  transform: scale(1.1);
+  background: #163f32;
+  color: white;
+}

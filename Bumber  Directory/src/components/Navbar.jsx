@@ -74,15 +74,7 @@ function Navbar({ onSignUpClick }) {
         </li>
 
         <li>
-          <a
-            href="/services"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToService();
-            }}
-          >
-            SERVICES
-          </a>
+          <Link to="/services">SERVICES</Link>
         </li>
 
         <li>
