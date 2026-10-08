@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/BussinessSectionStyle.css";
+import { Link } from "react-router-dom";
 
 function BusinessSection() {
   const features = [
@@ -31,10 +32,12 @@ function BusinessSection() {
             around them.
           </p>
 
-          <button className="partner-btn">
-            <span>Partner With Us</span>
-            <span className="arrow">→</span>
-          </button>
+          <Link to="/signup">
+            <button className="partner-btn">
+              <span>Partner With Us</span>
+              <span className="arrow">→</span>
+            </button>
+          </Link>
         </div>
 
         {/* CENTER IMAGE */}

@@ -24,12 +24,14 @@ function heroSection() {
               Ride,Rent <br />
               Shop & Booking
             </h1>
-            <button className="button" ref={featureBtnRef}>
-              GET STARTED
-              <MdOutlineArrowForward
-                onClick={() => featureBtnRef.current.click()}
-              />
-            </button>
+            <Link to="/login">
+              <button className="button" ref={featureBtnRef}>
+                GET STARTED
+                <MdOutlineArrowForward
+                  onClick={() => featureBtnRef.current.click()}
+                />
+              </button>
+            </Link>
           </div>
         </div>
       </section>

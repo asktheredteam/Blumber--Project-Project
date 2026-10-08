@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../styles/Servicestyle.css";
 import {
   FaHome,
@@ -118,35 +117,30 @@ function Service() {
             easier, safer, and more convenient.
           </p>
         </div>
-        <div className="services-list">
-          {services.map((service, index) => (
-            <div className="service-card" key={index}>
-              <div className={`service-icon icon-${index + 1}`}>
-                {service.icon}
+        <Link to="/login" style={{ textDecoration: "none" }}>
+          <div className="services-list">
+            {services.map((service, index) => (
+              <div className="service-card" key={index}>
+                <div className={`service-icon icon-${index + 1}`}>
+                  {service.icon}
+                </div>
+
+                <div className="service-content">
+                  <h3>{service.title}</h3>
+
+                  <p>{service.description}</p>
+
+                  <Link to="/login" className="service-link">
+                    Get Started
+                    <FaArrowRight />
+                  </Link>
+                </div>
+
+                <FaArrowRight className="mobile-arrow" />
               </div>
-
-              <div className="service-content">
-                <h3>{service.title}</h3>
-
-                <p>{service.description}</p>
-
-                <Link
-                  to="/signup"
-                  className="service-link"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate("/SignUp");
-                  }}
-                >
-                  Get Started
-                  <FaArrowRight />
-                </Link>
-              </div>
-
-              <FaArrowRight className="mobile-arrow" />
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Link>
         {/*Trust and benefits*/}
       </div>
     </>

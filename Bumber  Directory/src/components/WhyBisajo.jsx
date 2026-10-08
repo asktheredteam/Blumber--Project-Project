@@ -52,7 +52,7 @@ function WhyChooseBisajo() {
             local businesses, and everyday convenience — all in one app.
           </p>
 
-          <Link to="/About" className="why-bisajo-button">
+          <Link to="/about" className="why-bisajo-button">
             <span>Learn More About Us</span>
             <span className="why-bisajo-arrow">→</span>
           </Link>

@@ -148,7 +148,7 @@ function Navbar({ onSignUpClick }) {
         </Link>
 
         <Link to="/about" onClick={() => setMenuOpen(false)}>
-          ABOUT US ABOUT US
+          ABOUT US
         </Link>
 
         <button
