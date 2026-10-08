@@ -22,6 +22,10 @@ export default function useInteractive() {
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const nameParts = formData.full_name.trim().split(/\s+/);
+  const validatePhone = (phoneNumber) => {
+    const normalizedPhone = phoneNumber.replace(/[\s()-]/g, "");
+    return /^\+?\d{10,14}$/.test(normalizedPhone);
+  };
 
   //Initializing of handleChange
 
@@ -55,26 +59,24 @@ export default function useInteractive() {
     if (!formData.full_name.trim()) {
       newErrors.full_name = "Name is required";
     } else if (formData.full_name.trim().split(/\s+/).length < 2) {
-      setError((newErrors.full_name = "Enter your full name"));
+      newErrors.full_name = "Enter your full name";
     }
 
     // Email
     if (!emailRegex.test(formData.email)) {
-      setError((newErrors.email = "Enter a valid email address"));
+      newErrors.email = "Enter a valid email address";
     }
 
     // Phone
     if (!formData.phone_number) {
-      setError((newErrors.phone_number = "Phone number is required"));
-    } else if (!validatePhone()) {
-      setError((newErrors.phone_number = "Phone code does not match country"));
-    } else if (formData.phone_number.length < 10) {
-      setError((newErrors.phone_number = "Phone number is too short"));
+      newErrors.phone_number = "Phone number is required";
+    } else if (!validatePhone(formData.phone_number)) {
+      newErrors.phone_number = "Enter a valid phone number";
     }
 
     // User Type
     if (formData.role === "") {
-      setError((newErrors.role = "Please select a user type"));
+      newErrors.role = "Please select a user type";
     }
 
     // Password
@@ -88,7 +90,7 @@ export default function useInteractive() {
 
     // Confirm password
     if (formData.password !== formData.confirmPassword) {
-      setError((newErrors.confirmPassword = "Passwords do not match"));
+      newErrors.confirmPassword = "Passwords do not match";
     }
 
     return newErrors;
@@ -112,11 +114,12 @@ export default function useInteractive() {
     payload.append("phone_number", formData.phone_number);
 
     payload.append("id_type", formData.id_type);
-    payload.append("role", formData.role);
+    payload.append("role", formData.role.toLowerCase());
     payload.append("password", formData.password);
+    payload.append("confirm_password", formData.confirmPassword);
 
     // optional
-    payload.append("profile_photo", cardImage);
+     // payload.append("profile_photo", cardImage);
 
     try {
       const response = await fetch(

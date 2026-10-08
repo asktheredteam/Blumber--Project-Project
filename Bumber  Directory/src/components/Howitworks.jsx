@@ -1,88 +1,133 @@
-import '../styles/Howitworks.css'
+import '../styles/HowItWorks.css'
+import {
+  LuCalendar,
+  LuClipboardList,
+  LuFileText,
+  LuHouse,
+  LuMessageCircle,
+  LuPencil,
+  LuSearch,
+  LuUser,
+} from 'react-icons/lu'
 
 function HowItWorks() {
 
   const seekerSteps = [
-    { number: '01', icon: '🔍', title: 'Search', desc: 'Enter a location and choose the type of property' },
-    { number: '02', icon: '📋', title: 'Explore', desc: 'Compare available properties, prices and facilities' },
-    { number: '03', icon: '💬', title: 'Connect', desc: 'Contact the property owner or manager' },
-    { number: '04', icon: '📅', title: 'Book', desc: 'Submit a booking request' },
+    { number: '01', icon: LuSearch, title: 'Search', desc: 'Enter a location and choose the type of property' },
+    { number: '02', icon: LuClipboardList, title: 'Explore', desc: 'Compare available properties, prices and facilities' },
+    { number: '03', icon: LuMessageCircle, title: 'Connect', desc: 'Contact the property owner or manager' },
+    { number: '04', icon: LuCalendar, title: 'Book', desc: 'Submit a booking request' },
   ]
 
   const ownerSteps = [
-    { number: '01', icon: '👤', title: 'Create an Account', desc: 'Register as a property owner' },
-    { number: '02', icon: '📝', title: 'List Your Property', desc: 'Add property information and images' },
-    { number: '03', icon: '✏️', title: 'Manage Listings', desc: 'Update your property information' },
-    { number: '04', icon: '💬', title: 'Connect With Customers', desc: 'Receive inquiries and manage bookings' },
+    { number: '01', icon: LuUser, title: 'Create an Account', desc: 'Register as a property owner' },
+    { number: '02', icon: LuFileText, title: 'List Your Property', desc: 'Add property information and images' },
+    { number: '03', icon: LuPencil, title: 'Manage Listings', desc: 'Update your property information' },
+    { number: '04', icon: LuMessageCircle, title: 'Connect With Customers', desc: 'Receive inquiries and manage bookings' },
   ]
 
   return (
     <div className="how-it-works">
 
       {/* Section header */}
+      
       <div className="how-it-works-header">
         <p>HOW IT WORKS</p>
         <h2>Easy Steps for a Better Experience</h2>
       </div>
 
-      {/* Two columns */}
-      <div className="Owners-seekers-columns">
 
-        {/* Seekers column */}
-        <div className="seekers-header">
+      <div className="how-it-works-columns">
 
-          <div className="column-header seeker">
-            <span>👤</span>
-            <div>
+        {/* Seekers - light card */}
+        <div className="steps-column seekers">
+              <div className="column-header">
+                
+                    <div className="header-pill">
+                      <span className="header-icon"><LuUser aria-hidden="true" /></span>
 
-              <h3>For Property Seekers</h3>
-              <p>Find your next home or stay in just a few steps</p>
-            </div>
-
-          </div>
-
-          <div className="steps-grid">
-            {seekerSteps.map(step => (
-
-              <div className="step-card" key={step.number}>
-
-                <div className="step-number">{step.number}</div>
-
-                <div className="step-icon">{step.icon}</div>
-
-                <h4>{step.title}</h4>
-
-                <p>{step.desc}</p>
+                          <div>
+                                  <h3 className="column-title">For Property Seekers</h3>
+                                  <p>Find your next home or stay in just a few steps</p>
+                            </div>
+                    </div>
               </div>
-            ))}
+          <div className="steps-list">
+                  {seekerSteps.map(({ number, icon: StepIcon, title, desc }) => (
+
+                    <div className="step-item" key={number}>
+                              <div className="step-number">
+                                {number}
+                                </div>
+
+                              <div className="step-icon">
+                                <StepIcon aria-hidden="true" />
+                                </div>
+
+                            <div className="step-text">
+
+                                    <h4>
+                                      {title}
+                                    </h4>
+                                    <p>
+                                      {desc}
+                                      </p>
+
+                            </div>
+                            
+                    </div>
+                  ))}
           </div>
         </div>
 
-        {/* Owners column */}
-        <div className="owners-header">
-          <div className="column-header owner">
-            <span>🏠</span>
-            <div>
-              <h3>For Property Owners</h3>
-              <p>List your property and reach more potential tenants</p>
-            </div>
-          </div>
+        {/* Owners - dark green card */}
 
-          <div className="steps-grid">
-            {ownerSteps.map(step => (
+        <div className="steps-column owners">
 
-              <div className="step-card" key={step.number}>
+                    <div className="column-header">
+                            <div className="header-pill">
+                              <span className="header-icon"><LuHouse aria-hidden="true" /></span>
 
-                <div className="step-number">{step.number}</div>
+                            <div>
+                                  <h3 className="column-title">
+                                    For Property Owners
+                                  </h3>
+                                    <p>
+                                      List your property and reach more potential tenants
+                                      
+                                      </p>
+                            </div>
+                            </div>
+                    </div>
+          <div className="steps-list">
 
-                <div className="step-icon">{step.icon}</div>
+            {ownerSteps.map(({ number, icon: StepIcon, title, desc }) => (
+              <div className="step-item" key={number}>
+                      <div className="step-number">
+                        {number}
+                      </div>
 
-                <h4>{step.title}</h4>
+                      <div className="step-icon">
+                        <StepIcon aria-hidden="true" />
+                        </div>
 
-                <p>{step.desc}</p>
-              </div>
-            ))}
-          </div>
+                      <div className="step-text">
+
+                        <h4>
+                          {title}
+                        </h4>
+
+                        <p>
+                          
+                          {desc}
+                          
+                          </p>
+
+                            </div>
+                    </div>
+                  ))}
+                </div>
+
         </div>
 
       </div>

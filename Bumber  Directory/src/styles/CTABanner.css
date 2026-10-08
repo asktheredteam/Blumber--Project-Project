@@ -1,139 +1,177 @@
-/* ===== CTA BANNER ===== */
+/* ===== FULL-WIDTH CTA CARD ===== */
 .cta-banner {
   position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  min-height: 450px;
+  margin-top: 0.5rem;    
+  margin-bottom: 4.5rem;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 28px;
+  background-image:
+    linear-gradient(rgba(27, 56, 43, 0.85), rgba(27, 56, 43, 0.85)),
+    var(--cta-background-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: "Trebuchet MS", "Arial", sans-serif;
+  letter-spacing: 0.02em;
 }
 
-/* Dark blue gradient overlay - matches design */
-.cta-overlay {
+/* Decorative circle accents stay contained inside the CTA card. */
+.cta-banner::before,
+.cta-banner::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 20, 60, 0.88) 0%,
-    rgba(15, 40, 90, 0.82) 50%,
-    rgba(10, 20, 60, 0.88) 100%
-  );
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-banner::after {
+  top: -100px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.cta-banner::before {
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.cta-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 6rem;
 }
 
 /* Content */
 .cta-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+  max-width: 700px;
   text-align: center;
-  max-width: 680px;
-  z-index: 1;
-  position: relative;
 }
 
 .cta-content h2 {
-  font-size: 1.9rem;
-  font-weight: 800;
+  margin: 0;
   color: #ffffff;
-  line-height: 1.3;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  line-height: 1.35;
+}
+
+.text-highlight {
+  color: #a8e0b0;
 }
 
 .cta-content p {
-  font-size: 0.97rem;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.75;
   max-width: 580px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.97rem;
+  line-height: 1.75;
 }
 
 /* Buttons */
 .cta-buttons {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
   margin-top: 0.75rem;
 }
 
 .cta-btn {
   padding: 0.85rem 2rem;
-  border-radius: 6px;
+  border: 1px solid transparent;
+  border-radius: 9999px;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border: 2px solid transparent;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Primary - solid blue */
 .cta-btn.primary {
-  background-color: #1a5cb8;
-  color: #ffffff;
-  border-color: #1a5cb8;
+  background-color: #a8e0b0;
+  color: #1b382b;
 }
 
 .cta-btn.primary:hover {
-  background-color: #154fa0;
+  background-color: #b9ebc0;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(26, 92, 184, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
-/* Secondary - green filled like design */
 .cta-btn.secondary {
-  background-color: #1a7a3c;
+  background-color: rgba(18, 49, 39, 0.72);
+  border-color: rgba(168, 224, 176, 0.75);
   color: #ffffff;
-  border-color: #1a7a3c;
 }
 
 .cta-btn.secondary:hover {
-  background-color: #155f2f;
+  background-color: rgba(18, 49, 39, 0.95);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(26, 122, 60, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .cta-overlay {
-    padding: 3.5rem 4rem;
+  .cta-banner {
+    min-height: 450px;
+    padding: 80px 24px;
   }
 }
 
 @media (max-width: 768px) {
   .cta-banner {
-    background-attachment: scroll;
-  }
-
-  .cta-overlay {
-    padding: 3rem 2rem;
+    margin: 3rem 0;
+    padding: 72px 24px;
+    background-position: center;
   }
 
   .cta-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
   }
 }
 
 @media (max-width: 480px) {
-  .cta-overlay {
-    padding: 2.5rem 1rem;
+  .cta-banner {
+    min-height: 450px;
+    border-radius: 24px;
+    padding: 72px 16px;
   }
 
   .cta-content h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+
+  .cta-buttons {
+    width: 100%;
   }
 
   .cta-btn {
     width: 100%;
     text-align: center;
-  }
-
-  .cta-buttons {
-    width: 100%;
   }
 }

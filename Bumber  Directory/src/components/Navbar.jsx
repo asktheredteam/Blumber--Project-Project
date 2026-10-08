@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { MdPhone } from "react-icons/md";
+import brandMark from "../assets/Applogo.jpeg";
 
 import "../styles/Navbar.css";
 
@@ -16,11 +17,11 @@ function Navbar() {
   const isLightPage = location.pathname !== "/";
 
   const Features = [
-    { name: "Rent Houses", link: "/rent" },
-    { name: "Book Hotels", link: "/hotel" },
-    { name: "Rides", link: "/ride" },
-    { name: "Restaurants", link: "/restaurant" },
-    { name: "Shops", link: "/shop" },
+    { name: "Rent Houses", link: "/#services" },
+    { name: "Book Hotels", link: "/#services" },
+    { name: "Rides", link: "/#services" },
+    { name: "Restaurants", link: "/#services" },
+    { name: "Shops", link: "/#services" },
   ];
 
   const menuRef = useRef(null);
@@ -61,51 +62,27 @@ function Navbar() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  const signUpBtnStyle = {
-    background: isLightPage ? "#1a5cb8" : "#ffffff",
-    border: "none",
-    color: isLightPage ? "#ffffff" : "#0a0a0a",
-    padding: "0.55rem 1.6rem",
-    borderRadius: "999px",
-    fontWeight: 700,
-    fontSize: "0.95rem",
-    cursor: "pointer",
-    textDecoration: "none",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    whiteSpace: "nowrap",
-    boxShadow: "0 4px 14px rgba(255, 255, 255, 0.15)",
-    transition: "all 200ms ease",
-  };
-
   return (
     <nav className={`navbar ${isLightPage ? "navbar-light" : ""}`}>
       <div className="logo">
         <Link to="/" className="logo-text">
-          BUMBER<span className="logo-dot">.</span>
+          <img src={brandMark} alt="Bisajo home" className="logo-mark" />
         </Link>
       </div>
 
       <ul className="nav-links">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">HOME</Link>
         </li>
 
         <li>
-          <a
-            href="/services"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToService();
-            }}
-          >
-            Services
-          </a>
+          <Link to="/#services">
+            SERVICES
+          </Link>
         </li>
 
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about">ABOUT US </Link>
         </li>
 
         <li className="dropdown" ref={featureRef}>
@@ -116,8 +93,7 @@ function Navbar() {
             aria-haspopup="true"
             onClick={() => setFeatureOpen((prev) => !prev)}
           >
-            Features
-            {featureOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            FEATURES
           </button>
 
           <ul className={`dropdown_menu ${featureOpen ? "show" : ""}`}>
@@ -133,16 +109,23 @@ function Navbar() {
       </ul>
 
       <div className="navbar-actions">
-        <Link to="/login" className="LogIn">
-          Log In
-        </Link>
+        <div className="phone-contact">
+          <MdPhone aria-hidden="true" />
+          <span>123 456 789</span>
+        </div>
 
-        <Link to="/signup" style={signUpBtnStyle}>
-          Sign Up
-        </Link>
+        <div className="auth-buttons">
+          <Link to="/login" className="auth-btn btn-login">
+            LOG IN
+          </Link>
+          <Link to="/signup" className="auth-btn btn-signup">
+            SIGN UP
+          </Link>
+        </div>
 
         <button
-          className="signup-btn"
+          type="button"
+          className="navbar-menu-toggle"
           ref={menuButtonRef}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -153,16 +136,21 @@ function Navbar() {
       </div>
 
       <div ref={menuRef} className={`mobile-menu ${menuOpen ? "active" : ""}`}>
+        <div className="phone-contact mobile-phone-contact">
+          <MdPhone aria-hidden="true" />
+          <span>123 456 789</span>
+        </div>
+
         <Link to="/" onClick={() => setMenuOpen(false)}>
-          Home
+          HOME
         </Link>
 
-        <Link to="/services" onClick={() => setMenuOpen(false)}>
-          Services
+        <Link to="/#services" onClick={() => setMenuOpen(false)}>
+          SERVICES
         </Link>
 
         <Link to="/about" onClick={() => setMenuOpen(false)}>
-          About
+          ABOUT US
         </Link>
 
         <button
@@ -170,8 +158,7 @@ function Navbar() {
           aria-expanded={mobileFeatureOpen}
           onClick={() => setMobileFeatureOpen(!mobileFeatureOpen)}
         >
-          Features
-          {mobileFeatureOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+          FEATURES
         </button>
 
         <div
@@ -196,19 +183,17 @@ function Navbar() {
         <Link
           to="/login"
           onClick={() => setMenuOpen(false)}
-          className="LogIn"
-          style={{ width: "100%" }}
+          className="auth-btn btn-login"
         >
-          Log In
+          LOG IN
         </Link>
 
         <Link
           to="/signup"
-          className="SignUp"
+          className="auth-btn btn-signup"
           onClick={() => setMenuOpen(false)}
-          style={{ width: "100%", marginTop: "0.6rem", color: isLightPage ? "white" : "black" }}
         >
-          Sign Up
+          SIGN UP
         </Link>
       </div>
     </nav>

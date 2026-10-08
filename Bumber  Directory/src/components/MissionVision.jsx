@@ -1,4 +1,5 @@
 import '../styles/MissionVision.css'
+import { LuCheck, LuEye, LuShieldCheck, LuTarget } from 'react-icons/lu'
 
 function MissionVision() {
   const trustFeatures = [
@@ -20,7 +21,7 @@ function MissionVision() {
 
         <div className="mission-vision-cards">
           <div className="mv-card">
-            <span>🎯</span>
+            <span className="icon-badge"><LuTarget aria-hidden="true" /></span>
             <h3>Our Mission</h3>
 
             <p>To make property discovery and accommodation booking
@@ -30,7 +31,7 @@ function MissionVision() {
           </div>
 
           <div className="mv-card">
-            <span>🔭</span>
+            <span className="icon-badge"><LuEye aria-hidden="true" /></span>
             <h3>Our Vision</h3>
             <p>To be the leading digital platform for property
             discovering and connecting with property owners in Ghana,
@@ -53,21 +54,23 @@ function MissionVision() {
         
         </p>
 
-        <ul className="trust-list">
-          {trustFeatures.map((feature, index) => (
-            <li key={index}>
-              <span className="check">✅</span>
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div className="trust-content">
+          <ul className="trust-list">
+            {trustFeatures.map((feature) => (
+              <li key={feature}>
+                <span className="check"><LuCheck aria-hidden="true" /></span>
+                {feature}
+              </li>
+            ))}
+          </ul>
 
-            {/* Safety badge */}
-        <div className="safety-badge">
-        <div className="safety-icon">🛡️</div>
-        <p className="safety-text">Your safety<br />matters to us</p>
+          <div className="safety-badge">
+            <div className="safety-icon"><LuShieldCheck aria-hidden="true" /></div>
+            <p className="safety-text">Your safety<br />matters to us</p>
+          </div>
         </div>
+
+      </div>
 
     </div>
   )

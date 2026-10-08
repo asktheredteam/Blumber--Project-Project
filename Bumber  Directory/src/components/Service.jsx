@@ -106,7 +106,7 @@ function Service() {
 
   return (
     <>
-      <div className="service-container">
+      <div className="service-container" id="services">
         <div className="headline">Our Services</div>
         <h1 className="title">
           Everything you need, in one{" "}
@@ -114,7 +114,7 @@ function Service() {
         </h1>
         <div className="subtitle">
           <p className="p">
-            Bumber brings together trusted services to make your daily life
+            Bisajo brings together trusted services to make your daily life
             easier, safer, and more convenient.
           </p>
         </div>

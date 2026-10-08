@@ -3,16 +3,15 @@ import ctaImg from '../assets/cta-background.jpg'
 
 function CTABanner() {
   return (
-    <div 
+    <div
       className="cta-banner"
-      style={{ backgroundImage: `url(${ctaImg})` }}
+      style={{ '--cta-background-image': `url(${ctaImg})` }}
     >
-      {/* Dark overlay */}
       <div className="cta-overlay">
 
         <div className="cta-content">
 
-          <h2>Your Next Place Could Be Just a Search Away.</h2>
+          <h2>Your Next Place Could Be Just a Search <span className="text-highlight">Away.</span></h2>
 
           <p>
             Whether you're looking for somewhere to live, stay, invest, 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Splas.css";
-import Applogo from "../assets/Applogo.png";
+import  brandMark   from "../assets/Applogo.jpeg";
 
 export default function SplashScreen() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export default function SplashScreen() {
   return (
     <>
       <div className="LuncherDiv">
-        <img src={Applogo} alt="" className="LuncherImage" />
+        <img src={brandMark} alt="" className="LuncherImage" />
         <p className="paragraph">umber</p>
       </div>
     </>

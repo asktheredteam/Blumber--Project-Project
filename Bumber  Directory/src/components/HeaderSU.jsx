@@ -1,5 +1,5 @@
 import "../styles/SignUp.css";
-import Applogo from "../assets/Applogo.png";
+import  brandMark  from "../assets/Applogo.jpeg";
 
 function HeaderSU() {
   return (
@@ -7,7 +7,7 @@ function HeaderSU() {
       <div>
         {" "}
         <div className="header">
-          <img src={Applogo} width={40} alt="App Logo" className="Logo" />
+          <img src={brandMark} width={40} alt="App Logo" className="Logo" />
 
           <h3 className="headerTxt">umber</h3>
         </div>

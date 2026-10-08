@@ -2,138 +2,134 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import InputField from './InputField'
 import SocialButton from './SocialButton'
-import Logo from './Logo'
+import logoImg from '../assets/Applogo.jpeg'
+import '../styles/LoginForm.css'
 
 function LoginForm() {
-  // Form state for the login inputs
-  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const[ loading ,setLoading]=useState(false)
-  const[ error ,setError]=useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+  const [rememberMe, setRememberMe] = useState(false)
 
   const navigate = useNavigate()
-
   const API_BASE = import.meta.env.VITE_API_BASE_URL || ''
 
-
-   //
-
-   const handleGoogleLogin = () => {
+  const handleGoogleLogin = () => {
     console.warn('Google login not configured on frontend; configure OAuth endpoint')
   }
-
 
   const handleFacebookLogin = () => {
     console.warn('Facebook login not configured on frontend; configure OAuth endpoint')
   }
 
+  const handleSubmit = async () => {
+    if (!email || !password) {
+      setError('Please fill in all the fields')
+      return
+    }
 
+    setError('')
+    setLoading(true)
 
+    try {
+      const response = await fetch(`${API_BASE}/api/users/login/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
 
-    //Handle form submission and validation
+      const data = await response.json()
 
-    const handleSubmit = async()=> {
-      
-          if(!username || !email || !password ){
+      if (!response.ok) {
+        setError(data.error || data.message || 'Login Failed')
+        return
+      }
 
-            setError('Please fill all the fields')
-            return
-          }
-        
+      if (data.access) localStorage.setItem('accessToken', data.access)
+      if (data.refresh) localStorage.setItem('refreshToken', data.refresh)
+      setError('')
+      setSuccess('Login successful! Redirecting...')
+      setTimeout(() => {
+        navigate('/')
+      }, 1500)
 
-          setError('')
-          setLoading(true)
-
-          try{
-              const response = await fetch(`${API_BASE}/api/users/login/`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, email, password })
-              })
-
-              const data = await response.json()
-
-              if (!response.ok) {
-                setError(data.error || data.message || 'Login Failed')
-                return
-              }
-
-              // Success - save tokens and redirect
-              if (data.access) localStorage.setItem('accessToken', data.access)
-              if (data.refresh) localStorage.setItem('refreshToken', data.refresh)
-              setError('')
-              navigate('/')
-        
-          }  catch(err){
-            setError('Somethingwent wrong.Try again')
-          }finally{
-            setLoading(false)
-          }
-    }  
-
-
-
-
+    } catch (err) {
+      if (err.message === 'Failed to fetch') {
+        setError('Cannot connect to server. Check your connection.')
+      } else {
+        setError('Something went wrong. Try again')
+      }
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
-    <div>
-      <Logo />
-      <h2 className="welcome-heading">Welcome back</h2>
-
-      <div className="auth-form">
-        {/* Login form input fields */}
-        <InputField
-          type="text"
-          placeholder="Enter username"
-          icon=""
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <InputField
-          type="text"
-          placeholder="Enter your email"
-          iconClass="mail-icon"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <InputField
-          type="password"
-          placeholder="Enter previous password"
-          iconClass="lock-icon"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <div className="forgot-password-container">
-          {/* Password recovery link */}
-          <a href="#" className="forgot-password">Forgot password?</a>
+    <div className="login-page-wrapper">
+      <div className="login-card">
+        <div className="card-header">
+          <div className="login-logo">
+            <img src={logoImg} alt="Bisajo" />
+          </div>
+          <h2 className="welcome-heading">Welcome Back</h2>
+          <p className="welcome-subheading">Log in to continue with Bisajo.</p>
         </div>
 
-        {/* Submit action for the form */}
+        <div className="auth-form">
+          <InputField
+            type="email"
+            placeholder="Email Address"
+            iconClass="email-icon"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
+          <InputField
+            type="password"
+            placeholder="Password"
+            iconClass="lock-icon"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        { error && <p style={{color:'red',fontSize:'0.85rem'}}>{error}</p>}
-        <button className="submit-btn" onClick={handleSubmit}
-           disabled={loading}
+          <div className="remember-forgot">
+            <label className="remember-me">
+              <input 
+                type="checkbox" 
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+              />
+              <span>Remember me</span>
+            </label>
+            <a href="#" className="forgot-password">Forgot Password?</a>
+          </div>
 
-        >
-      
+          {error && <p className="status-msg error">{error}</p>}
+          {success && <p className="status-msg success">{success}</p>}
 
-         { loading?'Sign in...' :'Log In ' } 
-        </button>
+          <button className="submit-btn" onClick={handleSubmit} disabled={loading}>
+            {loading ? <span>Logging in... ⏳</span> : <span>Log In &rarr;</span>}
+          </button>
 
-        <p className="account-toggle">
-          Don't have an account? <a href="#" className="signup-link" onClick={(e) => { e.preventDefault(); navigate('/SignUp') }}>Sign Up</a>
-        </p>
+          <div className="divider">
+            <span className="divider-line"></span>
+            <span className="divider-text">or Continue with</span>
+            <span className="divider-line"></span>
+          </div>
 
-        {/* Divider before social login options */}
-        <div className="divider">or continue with</div>
+          <div className="social-login">
+            <SocialButton iconClass="google" onClick={handleGoogleLogin} />
+            <SocialButton iconClass="facebook" onClick={handleFacebookLogin} />
+          </div>
 
-        {/* Social login buttons */}
-        <div className="social-login">
-          <SocialButton iconClass="google" onClick={handleGoogleLogin} />
-          <SocialButton iconClass="facebook" onClick={handleFacebookLogin} />
+          <p className="account-toggle">
+            Don't have an account?{' '}
+            <a href="#" className="signup-link" onClick={(e) => { e.preventDefault(); navigate('/SignUp') }}>
+              Sign Up
+            </a>
+          </p>
         </div>
       </div>
     </div>
