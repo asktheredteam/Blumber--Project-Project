@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .serializers import UserSerializer
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
-from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 
 # For LoginView
 from django.contrib.auth import authenticate
@@ -17,7 +17,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 class RegisterUserView(CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
-    parser_classes = [MultiPartParser,FormParser]
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
 
 
 # Login View
