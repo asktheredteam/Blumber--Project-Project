@@ -2,7 +2,7 @@ import useInteractive from "../hooks/useInterative";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 
-import "../styles/SignUp.css";
+import "../styles/signup/SignUp.css";
 
 function EndSignUp() {
   return (

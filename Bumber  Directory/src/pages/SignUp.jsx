@@ -1,8 +1,8 @@
 ﻿import EndSignUp from "./EndSignUp.jsx";
 import FormSU from "../components/FormSU.jsx";
-import HeaderSU from "../components/HeaderSU.jsx";
+import HeaderSU from "../components/signup/HeaderSU.jsx";
 
-import "../styles/SignUp.css";
+import "../styles/signup/SignUp.css";
 
 function SignUp({ onClose }) {
   return (

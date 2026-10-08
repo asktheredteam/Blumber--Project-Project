@@ -1,11 +1,11 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/shared/Navbar";
 import HeroSection from "../components/HeroSection";
-import Service from "../components/Service";
+import Service from "../components/home/Service";
 import BusinessSection from "../components/BussinnessSection";
 import WhyBisajo from "../components/WhyBisajo";
 import { useState } from "react";
 import SignUp from "./SignUp";
-import Footer from "../components/Footer";
+import Footer from "../components/shared/Footer";
 
 function HomePage() {
   const [showSignUp, setShowSignUp] = useState(false);

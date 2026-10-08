@@ -1,7 +1,7 @@
 import useInteractive from "../hooks/useInterative";
 import { useRef } from "react";
 import LoadingSpinner from "../pages/LoadingSpinner";
-import "../styles/SignUp.css";
+import "../styles/signup/SignUp.css";
 import {
   LuUser,
   LuMail,

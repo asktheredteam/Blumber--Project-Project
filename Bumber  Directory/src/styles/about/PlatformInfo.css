@@ -1,0 +1,204 @@
+/* ===== PLATFORM INFO SECTION ===== */
+.platform-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 80px 2rem;
+  gap: 4rem;
+  background-color: #ffffff;
+  margin: 0;
+}
+
+/* ===== LEFT CONTENT ===== */
+.platform-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 45%;
+}
+
+/* Section label */
+.platform-content .section-label,
+.platform-content p:first-child {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2d6a4f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Heading */
+.platform-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1c2d42;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Green highlight */
+.green-text {
+  color: #2d6a4f;
+}
+
+/* Paragraphs */
+.platform-content p:not(:first-child) {
+  font-size: 0.92rem;
+  color: #4a5568;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ===== RIGHT SIDE ===== */
+.platform-right {
+  flex: 1;
+  max-width: 52%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===== IMAGE ===== */
+.platform-image {
+  position: relative;
+  width: 100%;
+}
+
+.platform-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Location tag */
+.location-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1c2d42;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ===== 3 MINI CARDS ===== */
+.platform-mini-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.mini-card {
+  background: #f8faf8;
+  border: 1.5px solid #e2ece6;
+  border-radius: 12px;
+  padding: 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.mini-card:hover {
+  border-color: #2d6a4f;
+  box-shadow: 0 4px 12px rgba(45, 106, 79, 0.1);
+  transform: translateY(-2px);
+}
+
+.mini-card span {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.mini-card h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1c2d42;
+  margin: 0;
+}
+
+.mini-card p {
+  font-size: 0.78rem;
+  color: #4a5568;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .platform-info {
+    padding: 60px 2rem;
+    gap: 2.5rem;
+  }
+
+  .platform-content h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .platform-info {
+    flex-direction: column;
+    padding: 50px 1.5rem;
+    gap: 2rem;
+  }
+
+  .platform-content {
+    max-width: 100%;
+  }
+
+  .platform-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .platform-image img {
+    height: 280px;
+  }
+
+  .platform-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .platform-info {
+    padding: 40px 1rem;
+  }
+
+  .platform-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .platform-image img {
+    height: 220px;
+  }
+
+  .platform-mini-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .mini-card {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .mini-card span {
+    font-size: 1.2rem;
+  }
+
+  .mini-card h4 {
+    font-size: 0.82rem;
+  }
+}

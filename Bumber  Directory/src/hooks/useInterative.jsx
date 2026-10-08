@@ -19,6 +19,10 @@ export default function useInteractive() {
   // Validation patterns
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+  const validatePhone = (phoneNumber) => {
+    const normalizedPhone = phoneNumber.replace(/[\s()-]/g, "");
+    return /^\+?\d{10,14}$/.test(normalizedPhone);
+  };
 
   // Handle input changes
   const handleChange = (e) => {
@@ -60,11 +64,11 @@ export default function useInteractive() {
       newErrors.email = "Enter a valid email address";
     }
 
-    // Phone Number
+    // Phone
     if (!formData.phone_number.trim()) {
       newErrors.phone_number = "Phone number is required";
-    } else if (formData.phone_number.length < 10) {
-      newErrors.phone_number = "Phone number is too short";
+    } else if (!validatePhone(formData.phone_number)) {
+      newErrors.phone_number = "Enter a valid phone number";
     }
 
     // User Type

@@ -1,0 +1,378 @@
+/* ===== HOW IT WORKS SECTION ===== */
+.how-it-works {
+  padding: 80px 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f9f5ee 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 0;
+}
+
+/* ===== SECTION HEADER ===== */
+.how-it-works-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.how-it-works-header p {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2d6a4f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.how-it-works-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1c2d42;
+  margin: 0;
+}
+
+/* ===== TWO COLUMNS ===== */
+.how-it-works-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ===== COLUMN CARD ===== */
+.steps-column {
+  border: none;
+  border-radius: 28px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 14px 36px rgba(28, 45, 66, 0.09);
+}
+
+/* Light card - seekers */
+.steps-column.seekers {
+  background: #f8f7f1;
+}
+
+/* Dark green card - owners */
+.steps-column.owners {
+  background: linear-gradient(180deg, #183f31 0%, #123127 100%);
+}
+
+/* ===== COLUMN HEADER ===== */
+.column-header {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.header-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 16px 24px;
+  border-radius: 9999px;
+}
+
+.seekers .header-pill {
+  background: #e8f1e9;
+}
+
+.owners .header-pill {
+  background: #2d4a3e;
+}
+
+.header-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.seekers .header-icon {
+  color: #285540;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.owners .header-icon {
+  color: #f0d58a;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Heading highlight effect */
+.column-title {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin: 0 0 0.2rem 0;
+}
+
+.column-title::before {
+  content: "";
+  position: absolute;
+  left: -0.6rem;
+  right: -0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(100% + 0.7rem);
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.05),
+    rgba(212, 175, 55, 0.25),
+    rgba(212, 175, 55, 0.05)
+  );
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.seekers .column-title {
+  color: #2d6a4f;
+}
+
+.owners .column-title {
+  color: #f5e7bc;
+}
+
+.column-header p {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.seekers .column-header p {
+  color: #4a5568;
+}
+
+.owners .column-header p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== STEPS LIST ===== */
+.steps-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Vertical timeline line runs behind the numbered badges. */
+.steps-list::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  bottom: 27px;
+  left: 1.4rem;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(212, 175, 55, 0.18),
+    rgba(212, 175, 55, 0.62),
+    rgba(212, 175, 55, 0.18)
+  );
+  z-index: 0;
+}
+
+/* ===== SINGLE STEP ===== */
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  position: relative;
+  min-height: 56px;
+}
+
+/* Number circles stay above the vertical timeline line. */
+.step-number {
+  position: relative;
+  z-index: 2;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 5px #f8f7f1;
+}
+
+.seekers .step-number {
+  background: linear-gradient(135deg, #1e4839 0%, #2d6a4f 100%);
+  color: #ffffff;
+}
+
+.owners .step-number {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d77d 100%);
+  color: #183f31;
+  box-shadow: 0 0 0 5px #183f31;
+}
+
+/* Monochrome outline icons sit in circular wrappers. */
+.step-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.seekers .step-icon {
+  color: #285540;
+  background: #e7eee7;
+  box-shadow: 0 8px 20px rgba(18, 49, 39, 0.08);
+}
+
+.owners .step-icon {
+  color: #f0d58a;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(240, 213, 138, 0.16);
+}
+
+/* Step text */
+.step-text {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.1rem;
+}
+
+.step-text h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.seekers .step-text h4 {
+  color: #1c2d42;
+}
+
+.owners .step-text h4 {
+  color: #ffffff;
+}
+
+.step-text p {
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.seekers .step-text p {
+  color: #4a5568;
+}
+
+.owners .step-text p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .how-it-works {
+    padding: 60px 2rem;
+  }
+
+  .steps-column {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 50px 1.5rem;
+  }
+
+  .how-it-works-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .how-it-works-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .steps-list::before {
+    left: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 40px 1rem;
+  }
+
+  .steps-column {
+    padding: 1.25rem;
+    border-radius: 28px;
+  }
+
+  .column-header {
+    align-items: stretch;
+  }
+
+  .header-pill {
+    width: 100%;
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .header-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .how-it-works-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .column-title {
+    font-size: 0.92rem;
+  }
+
+  .step-number {
+    width: 2.45rem;
+    height: 2.45rem;
+    font-size: 0.64rem;
+    box-shadow: 0 0 0 4px #f8f7f1;
+  }
+
+  .owners .step-number {
+    box-shadow: 0 0 0 4px #183f31;
+  }
+
+  .steps-list::before {
+    top: 20px;
+    bottom: 20px;
+    left: 1.225rem;
+  }
+
+  .step-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .step-text h4 {
+    font-size: 0.82rem;
+  }
+
+  .step-text p {
+    font-size: 0.75rem;
+  }
+}

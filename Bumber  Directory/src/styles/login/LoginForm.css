@@ -1,0 +1,40 @@
+.login-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.login-logo img {
+  width: 120px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+.remember-forgot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #1a3c2e;
+  cursor: pointer;
+}
+
+.remember-me span {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
