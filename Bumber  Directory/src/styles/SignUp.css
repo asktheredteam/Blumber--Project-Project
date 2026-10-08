@@ -72,10 +72,10 @@
 }
 .formInput {
   width: clamp(280px, 70vw, 700px);
-  height: 45px;
+  height: 40px;
   box-sizing: border-box;
   border-radius: 50px;
-  border: 1.5px solid gray;
+  border: 0.5px solid gray;
   padding-left: 20px;
   padding-right: 50px;
   font-size: 16px;
@@ -235,6 +235,7 @@ a:hover {
   position: relative;
 }
 
+<<<<<<< HEAD
 .Icon {
   width: 44px;
   height: 44px;
@@ -250,6 +251,13 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+=======
+.Icon:hover {
+  background-color: rgba(229, 240, 232);
+  border-radius: 20px;
+  transition: 1s;
+  transition-timing-function: linear;
+>>>>>>> 03a878e59762781383f6346211583bc4f8b67d5d
 }
 
 /*
