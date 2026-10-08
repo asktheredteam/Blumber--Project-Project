@@ -140,14 +140,10 @@ img {
   border: 1px solid #d4e4d8;
   border-radius: clamp(20px, 2vw, 32px);
   box-shadow: 0 8px 25px rgba(24, 63, 50, 0.05);
+  cursor: text;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-}
-
-.howItWorksCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(24, 63, 50, 0.1);
 }
 
 /* Step circle */
@@ -310,7 +306,7 @@ img {
 .firstbox .header {
   margin: 0 0 1rem;
   color: #34745d;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 700;
 }
 
@@ -585,13 +581,6 @@ img {
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
   .restaurantCard,
   .shopCard,
   .phoneWrapper,
