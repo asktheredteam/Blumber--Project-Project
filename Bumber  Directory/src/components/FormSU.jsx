@@ -191,6 +191,15 @@ function FormSU() {
         {isLoading ? <LoadingSpinner /> : "Sign Up"}
         <LuArrowRight />
       </button>
+
+      <div className="Login">
+        <p>
+          Already have an account{" "}
+          <span>
+            <a href="/login">Login</a>
+          </span>
+        </p>
+      </div>
     </form>
   );
 }
