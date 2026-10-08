@@ -1,4 +1,4 @@
-import '../styles/WhyChooseUs.css'
+import '../../styles/about/WhyChooseUs.css'
 
 function WhyChooseUs() {
 

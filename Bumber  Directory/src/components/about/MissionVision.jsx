@@ -1,4 +1,4 @@
-import '../styles/MissionVision.css'
+import '../../styles/about/MissionVision.css'
 import { LuCheck, LuEye, LuShieldCheck, LuTarget } from 'react-icons/lu'
 
 function MissionVision() {

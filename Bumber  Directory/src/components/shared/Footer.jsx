@@ -1,9 +1,9 @@
-import '../styles/Footer.css'
+import '../../styles/shared/Footer.css'
 
 
 import { Link } from "react-router-dom";
 
-import brandMark from "../assets/Applogo.jpeg";
+import brandMark from "../../assets/Applogo.jpeg";
 
 const Columns =[
   {
@@ -12,7 +12,7 @@ const Columns =[
 
                 {name: 'About Us'  , link: '/about'},
                 {name: 'Feature'  , link: '/feature'},
-                {name: 'Services'  , link: '/Services'},
+                {name: 'Services'  , link: '/#services'},
                 {name: 'Contact'  , link: '/contact'},
       ]
   },

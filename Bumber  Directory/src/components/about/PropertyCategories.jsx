@@ -1,4 +1,4 @@
-import '../styles/PropertyCategories.css';
+import '../../styles/about/PropertyCategories.css';
 
 const categories = [
   { icon: '🏠', name: 'Rental Houses' },

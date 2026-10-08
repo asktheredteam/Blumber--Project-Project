@@ -1,5 +1,5 @@
-import '../styles/PlatformInfo.css'
-import platformImg from '../assets/plaforminfoimg.jpg'
+import '../../styles/about/PlatformInfo.css'
+import platformImg from '../../assets/plaforminfoimg.jpg'
 
 function PlatformInfo() {
     

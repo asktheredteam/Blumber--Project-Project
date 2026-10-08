@@ -1,4 +1,4 @@
-import '../styles/HowItWorks.css'
+import '../../styles/about/HowItWorks.css'
 import {
   LuCalendar,
   LuClipboardList,

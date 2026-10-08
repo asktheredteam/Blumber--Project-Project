@@ -3,11 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { MdPhone } from "react-icons/md";
-import brandMark from "../assets/Applogo.jpeg";
+import brandMark from "../../assets/Applogo.jpeg";
 
-import "../styles/Navbar.css";
+import "../../styles/shared/Navbar.css";
 
-function Navbar() {
+function Navbar({ onSignUpClick }) {
   const [featureOpen, setFeatureOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileFeatureOpen, setMobileFeatureOpen] = useState(false);
@@ -73,6 +73,7 @@ function Navbar() {
       <ul className="nav-links">
         <li>
           <Link to="/">HOME</Link>
+     
         </li>
 
         <li>
@@ -143,6 +144,7 @@ function Navbar() {
 
         <Link to="/" onClick={() => setMenuOpen(false)}>
           HOME
+          HOME
         </Link>
 
         <Link to="/#services" onClick={() => setMenuOpen(false)}>
@@ -150,6 +152,7 @@ function Navbar() {
         </Link>
 
         <Link to="/about" onClick={() => setMenuOpen(false)}>
+          ABOUT US
           ABOUT US
         </Link>
 

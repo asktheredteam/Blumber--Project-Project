@@ -1,5 +1,5 @@
-import '../styles/CTABanner.css'
-import ctaImg from '../assets/cta-background.jpg'
+import '../../styles/about/CTABanner.css'
+import ctaImg from '../../assets/cta-background.jpg'
 
 function CTABanner() {
   return (

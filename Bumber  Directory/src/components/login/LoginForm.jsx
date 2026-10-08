@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import InputField from './InputField'
-import SocialButton from './SocialButton'
-import logoImg from '../assets/Applogo.jpeg'
-import '../styles/LoginForm.css'
+import InputField from '../shared/InputField'
+import SocialButton from '../shared/SocialButton'
+import logoImg from '../../assets/Applogo.jpeg'
+import '../../styles/login/LoginForm.css'
 
 function LoginForm() {
   const [email, setEmail] = useState('')

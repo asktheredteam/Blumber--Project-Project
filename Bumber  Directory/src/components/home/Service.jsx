@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import "../styles/Servicestyle.css";
+import "../../styles/Servicestyle.css";
 import {
   FaHome,
   FaHotel,
@@ -148,35 +148,6 @@ function Service() {
           ))}
         </div>
         {/*Trust and benefits*/}
-        <div className="benefits-container">
-          <div className="benefits-track">
-            <div className="benefits">
-              {benefits.map((benefit, index) => (
-                <div className="benefit" key={`${benefit.title}-${index}`}>
-                  <div className="benefit-icon">{benefit.icon}</div>
-
-                  <div>
-                    <h4>{benefit.title}</h4>
-                    <p>{benefit.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="benefits" aria-hidden="true">
-              {benefits.map((benefit, index) => (
-                <div className="benefit" key={`${benefit.title}-${index}`}>
-                  <div className="benefit-icon">{benefit.icon}</div>
-
-                  <div>
-                    <h4>{benefit.title}</h4>
-                    <p>{benefit.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );

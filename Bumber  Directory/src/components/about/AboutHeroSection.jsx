@@ -1,5 +1,5 @@
-import '../styles/AboutHeroSection.css'
-import heroImg from '../assets/aboutherosection.jpg'
+import '../../styles/about/AboutHeroSection.css'
+import heroImg from '../../assets/aboutherosection.jpg'
 import { LuMapPin } from 'react-icons/lu'
 
 function AboutHeroSection() {
