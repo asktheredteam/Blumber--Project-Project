@@ -73,13 +73,10 @@ function Navbar({ onSignUpClick }) {
       <ul className="nav-links">
         <li>
           <Link to="/">HOME</Link>
-     
         </li>
 
         <li>
-          <Link to="/#services">
-            SERVICES
-          </Link>
+          <Link to="/#services">SERVICES</Link>
         </li>
 
         <li>
@@ -144,7 +141,6 @@ function Navbar({ onSignUpClick }) {
 
         <Link to="/" onClick={() => setMenuOpen(false)}>
           HOME
-          HOME
         </Link>
 
         <Link to="/#services" onClick={() => setMenuOpen(false)}>
@@ -152,8 +148,7 @@ function Navbar({ onSignUpClick }) {
         </Link>
 
         <Link to="/about" onClick={() => setMenuOpen(false)}>
-          ABOUT US
-          ABOUT US
+          ABOUT US ABOUT US
         </Link>
 
         <button
