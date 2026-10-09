@@ -1,0 +1,590 @@
+/*  GLOBAL */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* SERVICES HERO*/
+.servicesHero {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../src/assets/ServicesHeroBG.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ContentDiv {
+  width: 100%;
+  max-width: 800px;
+  min-height: 90vh;
+  margin-left: clamp(1.5rem, 6vw, 5rem);
+  padding: 4rem 2rem 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.ContentDiv > p {
+  margin: 0 0 1rem;
+  color: #a7f9af;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ContentDiv div {
+  max-width: 750px;
+}
+
+.ContentDiv div > h1 {
+  margin: 0 0 1.2rem;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 750;
+  line-height: 1.05;
+}
+
+.ContentDiv div > p {
+  max-width: 650px;
+  margin: 0 0 2rem;
+  color: #ffffff;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.ContentDiv div button {
+  width: min(200px, 100%);
+  min-height: 50px;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #163f32;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.ContentDiv div button:hover {
+  transform: translateY(-3px);
+  background-color: #a7f9af;
+}
+
+/* 
+   HOW IT WORKS
+    */
+
+.howItWorks {
+  width: 100%;
+  padding: clamp(4rem, 7vw, 7rem) clamp(1rem, 5vw, 5rem);
+  background: #f8faf9;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Small heading */
+.howItWorks > h3 {
+  margin: 0 0 clamp(0.8rem, 1.5vw, 1.2rem);
+  color: #4d9878;
+  font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Main heading */
+.howItWorks > h1 {
+  width: min(100%, 1000px);
+  margin: 0 auto clamp(3rem, 5vw, 5rem);
+  color: #183f32;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/*  HOW IT WORKS CARDS */
+.howItWorksContainer {
+  width: min(100%, 1500px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.2rem, 3vw, 3.5rem);
+}
+
+.howItWorksCard {
+  width: 100%;
+  min-height: clamp(280px, 25vw, 380px);
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f9faf9;
+  border: 1px solid #d4e4d8;
+  border-radius: clamp(20px, 2vw, 32px);
+  box-shadow: 0 8px 25px rgba(24, 63, 50, 0.05);
+  cursor: text;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Step circle */
+.stepNumber {
+  width: clamp(70px, 7vw, 95px);
+  aspect-ratio: 1;
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e0f0df;
+  color: #34745d;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+}
+
+/* Card title */
+.howItWorksCard h4 {
+  margin: 0 0 clamp(1rem, 1.5vw, 1.4rem);
+  color: #183f32;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: 1.2;
+}
+
+/* Card paragraph */
+.howItWorksCard p {
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
+  color: #65756e;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: 1.6;
+}
+
+/* DISCOVER SECTION*/
+.discoverSection {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  padding: clamp(4rem, 7vw, 8rem) clamp(1.5rem, 6vw, 7rem);
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(75, 132, 103, 0.5) 30%, rgba(0, 0, 0, 0.1) 70%),
+    url("../src/assets/pn.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*  DISCOVER CONTENT  */
+.discoverContent {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.discoverContent h3 {
+  margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+  color: #b2dca5;
+  font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.discoverContent h2 {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 0 clamp(1.5rem, 2.5vw, 2.5rem);
+  color: #ffffff;
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.discoverContent p {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 0 clamp(2rem, 3vw, 3.5rem);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  line-height: 1.6;
+}
+
+/*   DISCOVER BUTTON  */
+.discoverButton {
+  width: min(250px, 100%);
+  min-height: 55px;
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #a9d99e;
+  color: #163f32;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.discoverButton:hover {
+  transform: translateY(-4px);
+  background: #bde6b2;
+}
+
+.discoverButton .arrow {
+  font-size: 1.7rem;
+  transition: transform 0.3s ease;
+}
+
+.discoverButton:hover .arrow {
+  transform: translateX(6px);
+}
+
+/*  DISCOVER VISUAL*/
+.discoverVisual {
+  width: 100%;
+  min-width: 0;
+}
+
+/* BUSINESS SECTION */
+.bussinessSection {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/*   FIRST BUSINESS BOX  */
+.firstbox {
+  width: 100%;
+  min-height: 450px;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(227, 240, 229, 0.4);
+}
+
+.firstbox .header {
+  margin: 0 0 1rem;
+  color: #34745d;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+}
+
+.firstbox > h4 {
+  max-width: 900px;
+  margin: 0 0 1.5rem;
+  color: #183f32;
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.firstbox > p {
+  max-width: 700px;
+  margin: 0;
+  color: #65756e;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  line-height: 1.6;
+}
+
+/*  BUSINESS MAIN BOX*/
+.mainBox {
+  width: min(100%, 1000px);
+  margin-top: 30px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.mainBox > div {
+  position: relative;
+  width: min(190px, 100%);
+  min-height: 50px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 10px 10px 20px rgba(129, 128, 128, 0.25);
+  border-radius: 8px;
+}
+
+/*  SECOND BUSINESS BOX */
+.secondBox {
+  width: 100%;
+  min-height: 320px;
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #34745d;
+  color: #ffffff;
+  text-align: center;
+}
+
+.secondBox > h3 {
+  max-width: 800px;
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.secondBox > p {
+  max-width: 600px;
+  margin: 0 0 1.5rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.secondBox > button {
+  width: min(180px, 100%);
+  min-height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #163f32;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.secondBox > button:hover {
+  transform: scale(1.05);
+  background: #163f32;
+  color: #ffffff;
+}
+
+/* TABLET*/
+@media (max-width: 900px) {
+  /* HERO */
+  .servicesHero {
+    min-height: 75vh;
+  }
+  .ContentDiv {
+    min-height: 75vh;
+    margin-left: 0;
+    padding: 3rem clamp(1.5rem, 6vw, 4rem);
+  }
+
+  /* HOW IT WORKS */
+  .howItWorksContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* DISCOVER */
+  .discoverSection {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .discoverContent {
+    max-width: 750px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .discoverVisual {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+}
+
+/* 
+   MOBILE
+    */
+
+@media (max-width: 600px) {
+  /* HERO */
+  .servicesHero {
+    min-height: 70vh;
+    background-position: center;
+  }
+
+  .ContentDiv {
+    min-height: 70vh;
+    padding: 3rem 1.2rem;
+    align-items: flex-start;
+  }
+
+  .ContentDiv div > h1 {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .ContentDiv div > p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* HOW IT WORKS */
+  .howItWorks {
+    padding: 4rem 1rem;
+  }
+
+  .howItWorks > h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    margin-bottom: 3rem;
+  }
+
+  .howItWorksContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .howItWorksCard {
+    min-height: 280px;
+    padding: 2rem 1.5rem;
+  }
+
+  /* DISCOVER */
+  .discoverSection {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .discoverContent h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .discoverContent p {
+    font-size: 1rem;
+  }
+
+  .discoverButton {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  /* BUSINESS */
+  .bussinessSection {
+    margin-top: 30px;
+  }
+
+  .firstbox {
+    min-height: 400px;
+
+    padding: 3rem 1rem;
+  }
+
+  .firstbox > h4 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .firstbox > p {
+    font-size: 1rem;
+  }
+
+  .mainBox {
+    gap: 1rem;
+  }
+
+  .mainBox > div {
+    width: calc(50% - 0.5rem);
+  }
+
+  .secondBox {
+    min-height: 300px;
+
+    padding: 3rem 1.2rem;
+  }
+
+  .secondBox > h3 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+}
+
+/*  VERY SMALL PHONES */
+@media (max-width: 400px) {
+  .ContentDiv {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .ContentDiv div > h1 {
+    font-size: 2.1rem;
+  }
+
+  .howItWorksCard {
+    min-height: 260px;
+
+    padding: 1.8rem 1rem;
+  }
+
+  .stepNumber {
+    width: 65px;
+  }
+
+  .discoverSection {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .discoverContent h2 {
+    font-size: 2rem;
+  }
+
+  .mainBox > div {
+    width: 100%;
+  }
+}
+
+/* REDUCED MOTIO  */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  .restaurantCard,
+  .shopCard,
+  .phoneWrapper,
+  .locationPin {
+    animation: none;
+  }
+}

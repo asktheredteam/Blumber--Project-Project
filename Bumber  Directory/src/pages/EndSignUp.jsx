@@ -2,38 +2,29 @@ import useInteractive from "../hooks/useInterative";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 
-import "../styles/SignUp.css";
+import "../styles/signup/SignUp.css";
 
 function EndSignUp() {
-  const { continueWithStyle, horiStyle, continueText, IconDivStyle } =
-    useInteractive();
   return (
     <>
       <div className="endSignUp">
-        <div className="Login">
-          {" "}
-          <p>
-            Already have an account{" "}
-            <span>
-              <a href="/login">Login</a>
-            </span>
-          </p>
-        </div>
         <div>
-          <p className="Terms">
-            By signing up you have agreed ,to the <a href=" terms"> Terms </a>{" "}
-            of the <a href="Service">Service</a> and{" "}
-            <a href="Privacy Policy">Privacy Policy</a>
-          </p>
           <div className="Continue">
-            <hr className="horiContinue1" />
-            <span>• Or continue with •</span>
-            <hr className="horiContinue2" />
+            <hr className="horiContinue" />
+            <span>• Or Continue with •</span>
+            <hr className="horiContinue" />
           </div>
 
           <div className="continueIcon">
-            <FcGoogle className="Icon" />
-            <IoLogoFacebook color="blue" className="Icon" />
+            <button type="button" className="socialButton googleButton">
+              <FcGoogle />
+              <span>Google</span>
+            </button>
+
+            <button type="button" className="socialButton facebookButton">
+              <IoLogoFacebook />
+              <span>Facebook</span>
+            </button>
           </div>
         </div>
       </div>

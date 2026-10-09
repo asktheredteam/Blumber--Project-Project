@@ -1,0 +1,305 @@
+/* Page Wrapper with Exact Base Gradient & Positioning Context */
+.login-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #e4f3e8 0%, #d5ebd9 50%, #b8dbc2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden; /* Clips outer decorative rings */
+}
+
+/* --- Decorative Abstract Background Shapes --- */
+
+/* 1. Glowing Orbs (Top-Left, Right, Bottom-Left) */
+.login-page-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    /* Top-Left Glowing Sphere */
+    radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.2) 12%, transparent 25%),
+    /* Small Floating Sphere Bottom-Left */
+    radial-gradient(circle at 9% 77%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 2.5%, transparent 6%),
+    /* Mid-Right Glowing Sphere */
+    radial-gradient(circle at 94% 21%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.25) 2.5%, transparent 6%);
+  z-index: 1;
+}
+
+/* 2. Thin Arcs & Bottom-Right Concentric Rings */
+.login-page-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    /* Top-Left Thin Green Arc 1 */
+    radial-gradient(circle at 0% 0%, transparent 220px, #2a6a48 221px, transparent 223px),
+    /* Top-Left Thin Green Arc 2 */
+    radial-gradient(circle at 0% 0%, transparent 340px, rgba(42, 106, 72, 0.5) 341px, transparent 342px),
+    /* Bottom-Left Soft Curved Shadow Overlay */
+    radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 350px, transparent 351px),
+    /* Bottom-Right Concentric Dark Green Circles */
+    radial-gradient(circle at 100% 100%, 
+      #2a6a48 0px, 
+      #2a6a48 80px, 
+      #5ca882 81px, 
+      #5ca882 150px, 
+      #b3dec1 151px, 
+      #b3dec1 220px, 
+      transparent 221px);
+  z-index: 1;
+}
+
+/* Main Form Card - High z-index to sit cleanly above background artwork */
+.login-card {
+  position: relative;
+  z-index: 10;
+  background: #f4fbf6;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 28px;
+  padding: 40px 36px;
+  box-shadow: 0 12px 32px rgba(15, 60, 40, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Form Layout & Component Rules --- */
+
+.card-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.card-header img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.welcome-heading {
+  color: #115337;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 16px 0 6px 0;
+}
+
+.welcome-subheading {
+  color: #728479;
+  font-size: 13px;
+  margin: 0;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input Fields Container */
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form div:has(> input),
+.auth-form .input-field-container {
+  box-sizing: border-box;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  width: 100%;
+  height: 48px;
+  border-radius: 50px !important;
+  border: 1px solid #d0e4d5 !important;
+  background-color: #ebf5ee !important;
+  padding: 0 20px 0 44px !important;
+  font-size: 14px;
+  color: #2c3e35;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.auth-form input:focus {
+  border-color: #115337 !important;
+}
+
+/* Input Icon Rules */
+.auth-form div:has(> input) {
+  position: relative;
+  width: 100%;
+}
+
+.auth-form div:has(> input) svg,
+.auth-form div:has(> input) img,
+.auth-form div:has(> input) i,
+.auth-form div:has(> input) .icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px !important;
+  height: 18px !important;
+  color: #728479;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Remember Me & Forgot Password */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: -2px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #617368;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  accent-color: #115337;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: #115337;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  height: 48px;
+  background-color: #115337;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease;
+  margin-top: 4px;
+}
+
+.submit-btn:hover {
+  background-color: #0c3e29;
+}
+
+/* Divider Lines */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  gap: 12px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #115337;
+  opacity: 0.35;
+}
+
+.divider-text {
+  font-size: 12px;
+  color: #115337;
+  font-weight: 600;
+}
+
+/* Social Buttons */
+.social-login {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.social-login button,
+.social-login .social-btn,
+.social-login > div {
+  flex: 1;
+  height: 44px;
+  border-radius: 50px !important;
+  border: 1px solid #d0e4d5 !important;
+  background-color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c3e35;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.social-login img,
+.social-login svg {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Footer Link */
+.account-toggle {
+  text-align: center;
+  font-size: 13px;
+  color: #728479;
+  margin-top: 8px;
+}
+
+.signup-link {
+  color: #115337;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .social-login {
+    flex-direction: column;
+  }
+}
