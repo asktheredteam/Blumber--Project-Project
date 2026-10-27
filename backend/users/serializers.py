@@ -38,3 +38,17 @@ class UserSerializer(serializers.ModelSerializer):
         validated_data['username'] = email
         user = User.objects.create_user(password=password, **validated_data)
         return user
+
+
+
+class ForgotPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+    class Meta:
+        fields = ['email']
+
+class ResetPasswordSerializer(serializers.Serializer):
+    uid = serializers.IntegerField()
+    token = serializers.CharField()
+    new_password = serializers.CharField(write_only=True)   
+    
