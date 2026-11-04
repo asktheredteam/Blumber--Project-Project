@@ -1,8 +1,8 @@
-﻿import EndSignUp from "./EndSignUp.jsx";
-import FormSU from "../components/FormSU.jsx";
-import HeaderSU from "../components/signup/HeaderSU.jsx";
+import SignUpSocialOptions from "../features/auth/components/SignUpSocialOptions.jsx";
+import FormSU from "../features/auth/components/FormSU.jsx";
+import HeaderSU from "../features/auth/components/HeaderSU.jsx";
 
-import "../styles/signup/SignUp.css";
+import "../styles/auth/SignUp.css";
 
 function SignUp({ onClose }) {
   return (
@@ -11,7 +11,7 @@ function SignUp({ onClose }) {
         <div className="positionController">
           <HeaderSU />
           <FormSU />
-          <EndSignUp />
+          <SignUpSocialOptions />
         </div>
       </div>
     </div>

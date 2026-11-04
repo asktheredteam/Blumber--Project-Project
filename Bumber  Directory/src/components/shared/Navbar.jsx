@@ -17,7 +17,7 @@ function Navbar({ onSignUpClick }) {
   const isLightPage = location.pathname !== "/";
 
   const Features = [
-    { name: "Rent Houses", link: "/#services" },
+    { name: "Rent Houses", link: "/rent" },
     { name: "Book Hotels", link: "/#services" },
     { name: "Rides", link: "/#services" },
     { name: "Restaurants", link: "/#services" },

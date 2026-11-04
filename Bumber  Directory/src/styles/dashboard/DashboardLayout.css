@@ -1,0 +1,47 @@
+/* ===== DASHBOARD LAYOUT ===== */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f7f5;
+  position: relative;
+}
+
+.dashboard-main {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100vh;
+  min-width: 0;
+  position: relative;
+  padding: 2rem;
+}
+
+.dashboard-sidebar-toggle {
+  position: absolute;
+  z-index: 20;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #dce5df;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #263d32;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dashboard-main > .dashboard-sidebar-toggle + .search-page .search-topbar {
+  padding-left: 4rem;
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    width: 100%;
+    min-height: 100dvh;
+    padding: 0;
+  }
+}

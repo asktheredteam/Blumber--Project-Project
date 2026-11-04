@@ -1,0 +1,13 @@
+.rent-filters {
+  margin-bottom: 1.5rem;
+}
+
+.rent-filters label {
+  display: grid;
+  gap: 0.5rem;
+  width: min(100%, 16rem);
+}
+
+.rent-filters select {
+  min-height: 2.5rem;
+}

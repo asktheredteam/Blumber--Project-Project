@@ -1,0 +1,124 @@
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 80vh;
+  background: url(../../assets/homePageBG.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.titles {
+  position: relative;
+  z-index: 2;
+  width: min(90%, 850px);
+  max-width: 100%;
+  margin-left: clamp(1rem, 8vw, 6.25rem);
+  margin-bottom: 1.25rem;
+  font-size: clamp(2rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #a7f9af;
+  cursor: text;
+  box-sizing: border-box;
+}
+
+.subHeadline {
+  max-width: 900px;
+  margin-left: clamp(1rem, 8vw, 6.25rem);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  color: white;
+  font-weight: 750;
+  box-sizing: border-box;
+}
+
+.button {
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(1.2rem, 3vw, 2rem);
+  margin-left: clamp(1rem, 8vw, 6.25rem);
+  margin-top: 1.25rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: green;
+  background: white;
+  box-shadow: 5px 3px 5px rgb(21, 20, 20);
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.button:hover {
+  background-color: green;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Tablet view */
+
+@media (max-width: 768px) {
+  .hero {
+    width: 100%;
+    min-height: 70vh;
+    background: green;
+  }
+}
+
+/* Small screen or phone */
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 65vh;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .titles {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+  }
+
+  .subHeadline {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    line-height: 1.1;
+  }
+
+  .button {
+    margin-left: 0;
+  }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 350px) {
+  .hero {
+    padding: 0.8rem;
+  }
+
+  .titles {
+    font-size: 1.6rem;
+  }
+
+  .subHeadline {
+    font-size: 1.8rem;
+  }
+}

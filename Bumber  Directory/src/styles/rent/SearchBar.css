@@ -1,0 +1,11 @@
+.rent-search {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 36rem;
+  margin-bottom: 1rem;
+}
+
+.rent-search input {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+}
