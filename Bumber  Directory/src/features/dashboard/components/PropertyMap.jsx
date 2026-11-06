@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo } from "react";
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
@@ -56,9 +55,9 @@ function MapPropertyLocations({ properties }) {
       properties.filter(
         (property) =>
           Number.isFinite(property.latitude) &&
-          Number.isFinite(property.longitude)
+          Number.isFinite(property.longitude),
       ),
-    [properties]
+    [properties],
   );
 
   useEffect(() => {
