@@ -90,8 +90,7 @@ function LoginForm() {
           user.username ||
           "",
         email: user.email || email,
-        phoneNumber:
-          user.phone_number || user.phoneNumber || user.phone || "",
+        phoneNumber: user.phone_number || user.phoneNumber || user.phone || "",
         role: user.role || "",
         profilePicture:
           user.profile_picture ||
@@ -176,17 +175,17 @@ function LoginForm() {
               <span>Log In &rarr;</span>
             )}
           </button>
-
-          {isDevelopment && (
-            <button
-              className="dev-preview-btn"
-              type="button"
-              onClick={handleDevelopmentAccess}
-            >
-              Open dashboard preview (development only)
-            </button>
-          )}
-
+          <Link to="/rent" className="dev-preview-link">
+            {isDevelopment && (
+              <button
+                className="dev-preview-btn"
+                type="button"
+                onClick={handleDevelopmentAccess}
+              >
+                Open dashboard preview (development only)
+              </button>
+            )}
+          </Link>
           <div className="divider">
             <span className="divider-line"></span>
             <span className="divider-text">or Continue with</span>
