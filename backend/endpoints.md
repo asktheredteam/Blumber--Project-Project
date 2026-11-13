@@ -82,6 +82,102 @@ Returns a success message if the token is valid and the password passes the
 configured Django password validators. Invalid user IDs or tokens return
 `400`.
 
+## Profile endpoints
+
+All profile routes require authentication and use the same base path:
+`/api/profiles/`.
+
+### Current user profile
+
+`GET /api/profiles/me/`
+`PATCH /api/profiles/me/`
+
+Returns the authenticated user’s basic profile and allows updates to their
+profile fields.
+
+Example response:
+
+```json
+{
+  "id": 1,
+  "username": "alexblack",
+  "email": "alex@gmail.com",
+  "first_name": "Alex",
+  "last_name": "Black"
+}
+```
+
+Example PATCH payload:
+
+```json
+{
+  "first_name": "Alex",
+  "last_name": "Black"
+}
+```
+
+### Host profile
+
+`GET /api/profiles/hosts/`
+`POST /api/profiles/hosts/`
+`PATCH /api/profiles/hosts/`
+`PUT /api/profiles/hosts/`
+
+Creates or updates a host profile for the authenticated user. This is used for
+users listing homes or hotels.
+
+Required on create:
+
+```json
+{
+  "id_type": "national_id",
+  "citizenship_card": "<image-file>",
+  "business_name": "Blumber Homes"
+}
+```
+
+`citizenship_card` is uploaded as a file, typically via
+`multipart/form-data`.
+
+### Driver profile
+
+`GET /api/profiles/drivers/`
+`POST /api/profiles/drivers/`
+`PATCH /api/profiles/drivers/`
+`PUT /api/profiles/drivers/`
+
+Creates or updates a driver profile for the authenticated user. This is used
+for users providing transportation services.
+
+Required on create:
+
+```json
+{
+  "drivers_license": "<image-file>",
+  "license_number": "DL-123456"
+}
+```
+
+### Vendor profile
+
+`GET /api/profiles/vendors/`
+`POST /api/profiles/vendors/`
+`PATCH /api/profiles/vendors/`
+`PUT /api/profiles/vendors/`
+
+Creates or updates a vendor profile for the authenticated user. This is used
+for restaurants and local service providers.
+
+Required on create:
+
+```json
+{
+  "store_name": "Kofi's Grill",
+  "category": "Restaurant",
+  "store_address": "123 Main Street, Accra"
+}
+```
+
 ## Other route
 
 `/admin/` is Django's administrative site, primarily for admin testing.

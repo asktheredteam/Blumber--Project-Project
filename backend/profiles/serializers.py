@@ -1,5 +1,15 @@
 from rest_framework import serializers
 from .models import HostProfile, DriverProfile, VendorProfile
+from users.models import User
+
+
+class NormalUserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'first_name', 'last_name']
+        read_only_fields = ['id', 'username', 'email']
+
+
 
 class HostProfileSerializer(serializers.ModelSerializer):
     class Meta:
