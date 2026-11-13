@@ -1,6 +1,10 @@
 from django.urls import path, include
-from .views import NormalUserProfileView
-
+from .views import (
+    NormalUserProfileView,
+    HostProfileView,
+    DriverProfileView,
+    VendorProfileView
+)
 
 urlpatterns = [
     # Normal User Profile endpoint (GET / PATCH / PUT)
